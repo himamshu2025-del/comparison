@@ -17,4 +17,4 @@ Generate a .md page that the "comparison" repo can use by providing Claude Code 
 Generate the overview by running Claude in the exiobase/tradeflow folder.  
 We're not using the scripts external that are external to tradeflow folder.
 
-https://github.com/ModelEarth/exiobase/tree/main/tradeflow
+[github.com/ModelEarth/exiobase/tree/main/tradeflow](https://github.com/ModelEarth/exiobase/tree/main/tradeflow)
