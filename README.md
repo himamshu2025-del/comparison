@@ -12,6 +12,9 @@ Veiw initial comparison vibe dev output:
 
 TO DO:
 
-Generate a CLAUDE.md page here in the "comparison" repo that provide Claude Code CLI with the names of files and columns in the 2019/country folder here:
+Generate a .md page that the "comparison" repo can use by providing Claude Code CLI with logic for the names of files and columns in tradeflow/[year]/[country]. And include ideas on how the files could be used for comparisons.
+
+Generate the overview by running Claude in the exiobase/tradeflow folder.  
+We're not using the scripts external that are external to tradeflow folder.
 
 https://github.com/ModelEarth/exiobase/tree/main/tradeflow
