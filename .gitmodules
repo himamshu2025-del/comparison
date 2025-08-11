@@ -1,0 +1,6 @@
+[submodule "projects"]
+	path = projects
+	url = https://github.com/modelearth/projects
+[submodule "realitystream"]
+	path = realitystream
+	url = https://github.com/modelearth/realitystream
