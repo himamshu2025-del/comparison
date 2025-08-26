@@ -8,7 +8,7 @@ Frontends for tradeflow data with a UN Goal focus.
 
 Veiw initial comparison vibe dev output:
 
-[model.earth/comparison/dev/loren](https://model.earth/comparison/dev/loren/)
+[/comparison/dev/loren](dev/loren/)
 
 TO DO:
 
