@@ -12,7 +12,9 @@ body {
     background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
     min-height: 100vh;
 }
-
+.dark {
+    background: #333;
+}
 /* Hero Section */
 .hero-section {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -662,6 +664,154 @@ body {
 @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
+}
+
+/* Dark Mode Styles */
+.dark body {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    color: #e0e6ed;
+}
+
+.dark .hero-section {
+    background: linear-gradient(135deg, #0f3460 0%, #0e6ba8 100%);
+}
+
+.dark .hero-section::before {
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+    opacity: 0.2;
+}
+
+.dark .map-section,
+.dark .country-panel,
+.dark .executive-summary,
+.dark .chart-navigation,
+.dark .chart-section,
+.dark .insights-section {
+    background: #1e1e2e;
+    border: 1px solid #333;
+}
+
+.dark .map-controls h2,
+.dark .panel-info h3,
+.dark .section-header h2,
+.dark .insights-section h2 {
+    color: #e0e6ed;
+}
+
+.dark .selection-info,
+.dark .panel-info p,
+.dark .section-description,
+.dark .metric-label,
+.dark .metric .label {
+    color: #9ca3af;
+}
+
+.dark .map-legend {
+    background: #2a2a3a;
+}
+
+.dark .map-legend h3 {
+    color: #e0e6ed;
+}
+
+.dark .country-item:hover {
+    background: #333;
+}
+
+.dark .country-name {
+    color: #e0e6ed;
+}
+
+.dark .metric-card {
+    background: #2a2a3a;
+    border: 1px solid #404040;
+}
+
+.dark .metric-card:hover {
+    background: #333;
+}
+
+.dark .summary-card {
+    background: #2a2a3a;
+    border: 1px solid #404040;
+}
+
+.dark .summary-card h3 {
+    color: #e0e6ed;
+}
+
+.dark .tab-btn {
+    background: #2a2a3a;
+    color: #9ca3af;
+    border: 1px solid #404040;
+}
+
+.dark .tab-btn:hover {
+    background: #333;
+}
+
+.dark .tab-btn.active {
+    background: linear-gradient(135deg, #0f3460, #0e6ba8);
+    color: white;
+}
+
+.dark .chart-container {
+    background: #2a2a3a;
+    border: 1px solid #404040;
+}
+
+.dark .chart-container:hover {
+    background: #333;
+}
+
+.dark .expand-btn {
+    background: linear-gradient(135deg, #0f3460, #0e6ba8);
+}
+
+.dark .expand-btn:hover {
+    box-shadow: 0 10px 20px rgba(15, 52, 96, 0.3);
+}
+
+.dark .insights-list li {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dark .footer {
+    background: #0d1117;
+}
+
+.dark .footer-content p {
+    color: #9ca3af;
+}
+
+.dark .vs {
+    color: #6b7280;
+}
+
+.dark .country-checkbox {
+    border-color: #6b7280;
+}
+
+.dark .country-checkbox.selected {
+    border-color: #0f3460;
+    background: #0f3460;
+}
+
+.dark #map-scroll-message {
+    background: rgba(15, 52, 96, 0.9) !important;
+    border: 1px solid rgba(255,255,255,0.3) !important;
+}
+
+.dark #map-scroll-message:hover {
+    background: rgba(14, 107, 168, 0.95) !important;
+}
+
+.dark #map-scroll-message[style*="rgba(46, 204, 113"] {
+    background: rgba(39, 174, 96, 0.9) !important;
+}
+
+.dark #map-scroll-message[style*="rgba(46, 204, 113"]:hover {
+    background: rgba(46, 204, 113, 0.95) !important;
 }
 
 /* Utility Classes */

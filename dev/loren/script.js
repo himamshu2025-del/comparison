@@ -49,7 +49,7 @@ function initializeMap() {
         center: [20, 0],
         zoom: 2,
         zoomControl: true,
-        scrollWheelZoom: true
+        scrollWheelZoom: false // Disabled initially
     });
 
     // Add tile layer
@@ -82,6 +82,17 @@ function initializeMap() {
     });
 
     updateMapLegend();
+    
+    // Add scroll message overlay
+    addScrollMessage();
+    
+    // Toggle scroll on map click
+    map.on('click', toggleMapScroll);
+    
+    // Force map to invalidate size after initialization
+    setTimeout(() => {
+        map.invalidateSize();
+    }, 100);
 }
 
 // Create map popup content
@@ -927,6 +938,106 @@ function showNotification(message) {
             document.body.removeChild(notification);
         }, 300);
     }, 3000);
+}
+
+// Add scroll message overlay to map
+function addScrollMessage() {
+    const mapContainer = document.getElementById('map');
+    const scrollMessage = document.createElement('div');
+    scrollMessage.id = 'map-scroll-message';
+    scrollMessage.innerHTML = `
+        <div class="scroll-message-content">
+            <i class="scroll-icon">🖱️</i>
+            <span>Click map to enable mouse wheel zoom</span>
+        </div>
+    `;
+    scrollMessage.style.cssText = `
+        position: absolute;
+        top: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: rgba(52, 152, 219, 0.9);
+        color: white;
+        padding: 8px 16px;
+        border-radius: 20px;
+        z-index: 1000;
+        font-size: 14px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255,255,255,0.2);
+        cursor: pointer;
+        transition: all 0.3s ease;
+    `;
+    
+    // Add hover effect
+    scrollMessage.addEventListener('mouseenter', () => {
+        scrollMessage.style.background = 'rgba(41, 128, 185, 0.95)';
+        scrollMessage.style.transform = 'translateX(-50%) translateY(-2px)';
+    });
+    
+    scrollMessage.addEventListener('mouseleave', () => {
+        scrollMessage.style.background = 'rgba(52, 152, 219, 0.9)';
+        scrollMessage.style.transform = 'translateX(-50%) translateY(0)';
+    });
+    
+    // Toggle scroll when message is clicked
+    scrollMessage.addEventListener('click', toggleMapScroll);
+    
+    mapContainer.style.position = 'relative';
+    mapContainer.appendChild(scrollMessage);
+}
+
+// Toggle map scroll wheel zoom
+function toggleMapScroll() {
+    if (!map.scrollWheelZoom.enabled()) {
+        // Enable scroll
+        map.scrollWheelZoom.enable();
+        
+        // Update the scroll message to show toggle option
+        updateScrollMessage(true);
+        
+        // Show brief confirmation
+        showNotification('Map scroll enabled! 🖱️ Click again to disable.');
+    } else {
+        // Disable scroll
+        map.scrollWheelZoom.disable();
+        
+        // Update the scroll message to show enable option
+        updateScrollMessage(false);
+        
+        // Show brief confirmation
+        showNotification('Map scroll disabled! 🖱️ Click to enable.');
+    }
+}
+
+// Update scroll message based on current state
+function updateScrollMessage(isEnabled) {
+    let scrollMessage = document.getElementById('map-scroll-message');
+    
+    if (!scrollMessage) {
+        // Create message if it doesn't exist
+        addScrollMessage();
+        scrollMessage = document.getElementById('map-scroll-message');
+    }
+    
+    const messageContent = scrollMessage.querySelector('.scroll-message-content');
+    if (isEnabled) {
+        messageContent.innerHTML = `
+            <i class="scroll-icon">🖱️</i>
+            <span>Scroll enabled - Click to disable</span>
+        `;
+        scrollMessage.style.background = 'rgba(46, 204, 113, 0.9)';
+    } else {
+        messageContent.innerHTML = `
+            <i class="scroll-icon">🖱️</i>
+            <span>Click map to enable mouse wheel zoom</span>
+        `;
+        scrollMessage.style.background = 'rgba(52, 152, 219, 0.9)';
+    }
+    
+    // Show the message with fade-in animation
+    scrollMessage.style.opacity = '1';
+    scrollMessage.style.transform = 'translateX(-50%) translateY(0)';
 }
 
 // Utility function to format numbers
