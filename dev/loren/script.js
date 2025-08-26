@@ -11,20 +11,24 @@ let echartsInstances = {};
 let currentAnalysisMode = 'air_emissions';
 let currentIndustryFilter = 'all';
 
-// Country information with coordinates and flags
+// Country information with coordinates and flags (alphabetized)
 const COUNTRIES = {
-    'US': { name: 'United States', coords: [39.8283, -98.5795], flag: '🇺🇸', color: '#3498db' },
-    'IN': { name: 'India', coords: [20.5937, 78.9629], flag: '🇮🇳', color: '#e74c3c' },
+    'AE': { name: 'United Arab Emirates', coords: [23.4241, 53.8478], flag: '🇦🇪', color: '#8e44ad' },
+    'AU': { name: 'Australia', coords: [-25.2744, 133.7751], flag: '🇦🇺', color: '#607d8b' },
+    'BR': { name: 'Brazil', coords: [-14.2350, -51.9253], flag: '🇧🇷', color: '#795548' },
+    'CA': { name: 'Canada', coords: [56.1304, -106.3468], flag: '🇨🇦', color: '#e91e63' },
     'CN': { name: 'China', coords: [35.8617, 104.1954], flag: '🇨🇳', color: '#f39c12' },
     'DE': { name: 'Germany', coords: [51.1657, 10.4515], flag: '🇩🇪', color: '#9b59b6' },
-    'JP': { name: 'Japan', coords: [36.2048, 138.2529], flag: '🇯🇵', color: '#1abc9c' },
-    'GB': { name: 'United Kingdom', coords: [55.3781, -3.4360], flag: '🇬🇧', color: '#34495e' },
     'FR': { name: 'France', coords: [46.2276, 2.2137], flag: '🇫🇷', color: '#e67e22' },
+    'GB': { name: 'United Kingdom', coords: [55.3781, -3.4360], flag: '🇬🇧', color: '#34495e' },
+    'IN': { name: 'India', coords: [20.5937, 78.9629], flag: '🇮🇳', color: '#e74c3c' },
     'IT': { name: 'Italy', coords: [41.8719, 12.5674], flag: '🇮🇹', color: '#2ecc71' },
-    'CA': { name: 'Canada', coords: [56.1304, -106.3468], flag: '🇨🇦', color: '#e91e63' },
-    'BR': { name: 'Brazil', coords: [-14.2350, -51.9253], flag: '🇧🇷', color: '#795548' },
-    'AU': { name: 'Australia', coords: [-25.2744, 133.7751], flag: '🇦🇺', color: '#607d8b' },
-    'KR': { name: 'South Korea', coords: [35.9078, 127.7669], flag: '🇰🇷', color: '#ff5722' }
+    'JP': { name: 'Japan', coords: [36.2048, 138.2529], flag: '🇯🇵', color: '#1abc9c' },
+    'KR': { name: 'South Korea', coords: [35.9078, 127.7669], flag: '🇰🇷', color: '#ff5722' },
+    'RU': { name: 'Russia', coords: [61.5240, 105.3188], flag: '🇷🇺', color: '#d35400' },
+    'SA': { name: 'Saudi Arabia', coords: [23.8859, 45.0792], flag: '🇸🇦', color: '#27ae60' },
+    'US': { name: 'United States', coords: [39.8283, -98.5795], flag: '🇺🇸', color: '#3498db' },
+    'ZA': { name: 'South Africa', coords: [-30.5595, 22.9375], flag: '🇿🇦', color: '#16a085' }
 };
 
 // Factor groupings for analysis
@@ -133,6 +137,7 @@ function initializeMap() {
     });
 
     updateMapLegend();
+    createFloatingLegend();
     
     // Add scroll message overlay
     addScrollMessage();
@@ -140,10 +145,19 @@ function initializeMap() {
     // Toggle scroll on map click
     map.on('click', toggleMapScroll);
     
-    // Force map to invalidate size after initialization
+    // Force map to invalidate size after initialization with multiple attempts
     setTimeout(() => {
         map.invalidateSize();
     }, 100);
+    
+    // Additional size fixes for proper container filling
+    setTimeout(() => {
+        map.invalidateSize();
+    }, 500);
+    
+    setTimeout(() => {
+        map.invalidateSize();
+    }, 1000);
 }
 
 // Create map popup content
@@ -230,22 +244,46 @@ function updateMapMarkers() {
     });
 }
 
-// Update map legend
-function updateMapLegend() {
-    const selectedContainer = document.getElementById('selected-countries');
-    const availableContainer = document.getElementById('available-countries');
+// Create floating legend over map
+function createFloatingLegend() {
+    const mapContainer = document.getElementById('map');
+    const legend = document.createElement('div');
+    legend.id = 'floating-legend';
+    legend.innerHTML = '<div id="legend-content"></div>';
+    legend.style.cssText = `
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        background: rgba(255, 255, 255, 0.95);
+        border-radius: 10px;
+        padding: 15px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        z-index: 1000;
+        max-height: 400px;
+        overflow-y: auto;
+        min-width: 200px;
+        font-size: 14px;
+    `;
     
-    selectedContainer.innerHTML = '';
-    availableContainer.innerHTML = '';
+    mapContainer.appendChild(legend);
+    updateMapLegend();
+}
 
-    Object.entries(COUNTRIES).forEach(([code, country]) => {
+// Update map legend (now in floating legend)
+function updateMapLegend() {
+    const legendContent = document.getElementById('legend-content');
+    if (!legendContent) return;
+    
+    legendContent.innerHTML = '';
+
+    // Get all countries in alphabetical order by country code
+    const sortedCountries = Object.entries(COUNTRIES).sort(([a], [b]) => a.localeCompare(b));
+    
+    sortedCountries.forEach(([code, country]) => {
         const countryItem = createCountryLegendItem(code, country);
-        
-        if (selectedCountries.has(code)) {
-            selectedContainer.appendChild(countryItem);
-        } else {
-            availableContainer.appendChild(countryItem);
-        }
+        legendContent.appendChild(countryItem);
     });
 }
 
@@ -253,16 +291,40 @@ function updateMapLegend() {
 function createCountryLegendItem(code, country) {
     const isSelected = selectedCountries.has(code);
     const item = document.createElement('div');
-    item.className = 'country-item';
+    item.className = 'legend-country-item';
     item.onclick = () => toggleCountrySelection(code);
     
-    item.innerHTML = `
-        <div class="country-checkbox ${isSelected ? 'selected' : ''}" style="background-color: ${isSelected ? country.color : 'transparent'}">
-            ${isSelected ? '✓' : ''}
-        </div>
-        <span class="country-flag">${country.flag}</span>
-        <span class="country-name">${country.name}</span>
+    const orangeColor = '#f39c12'; // Same orange as China
+    item.style.cssText = `
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 6px 8px;
+        margin: 2px 0;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        ${isSelected ? `background-color: ${orangeColor}; border-left: 3px solid ${orangeColor};` : 'border-left: 3px solid transparent;'}
     `;
+    
+    item.innerHTML = `
+        <span style="font-size: 16px;">${country.flag}</span>
+        <span style="font-size: 15px; font-weight: ${isSelected ? '600' : '500'}; color: ${isSelected ? 'white' : '#666'};">${country.name}</span>
+        ${isSelected ? `<span style="margin-left: auto; font-size: 14px; color: white;">✓</span>` : ''}
+    `;
+    
+    // Add hover effect
+    item.addEventListener('mouseenter', () => {
+        if (!isSelected) {
+            item.style.backgroundColor = '#f5f5f5';
+        }
+    });
+    
+    item.addEventListener('mouseleave', () => {
+        if (!isSelected) {
+            item.style.backgroundColor = 'transparent';
+        }
+    });
     
     return item;
 }
@@ -1070,8 +1132,10 @@ function toggleMapScroll() {
         // Update the scroll message to show toggle option
         updateScrollMessage(true);
         
-        // Show brief confirmation
-        showNotification('Map scroll enabled! 🖱️ Click again to disable.');
+        // Auto-fade message after 4 seconds when enabled
+        setTimeout(() => {
+            autoFadeScrollMessage();
+        }, 4000);
     } else {
         // Disable scroll
         map.scrollWheelZoom.disable();
@@ -1079,8 +1143,7 @@ function toggleMapScroll() {
         // Update the scroll message to show enable option
         updateScrollMessage(false);
         
-        // Show brief confirmation
-        showNotification('Map scroll disabled! 🖱️ Click to enable.');
+        // No notification needed for disable
     }
 }
 
@@ -1112,6 +1175,22 @@ function updateScrollMessage(isEnabled) {
     // Show the message with fade-in animation
     scrollMessage.style.opacity = '1';
     scrollMessage.style.transform = 'translateX(-50%) translateY(0)';
+}
+
+// Auto-fade scroll message after 4 seconds
+function autoFadeScrollMessage() {
+    const scrollMessage = document.getElementById('map-scroll-message');
+    if (scrollMessage && map.scrollWheelZoom.enabled()) {
+        scrollMessage.style.transition = 'opacity 1s ease, transform 1s ease';
+        scrollMessage.style.opacity = '0';
+        scrollMessage.style.transform = 'translateX(-50%) translateY(-20px)';
+        
+        setTimeout(() => {
+            if (scrollMessage.parentNode) {
+                scrollMessage.remove();
+            }
+        }, 1000);
+    }
 }
 
 // Comprehensive Trade Data Loading System

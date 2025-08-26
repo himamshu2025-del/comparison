@@ -135,21 +135,7 @@ body {
     height: 700px;
 }
 
-.map-legend {
-    margin-top: 1.5rem;
-    padding: 1.5rem;
-    background: #f8f9fa;
-    border-radius: 15px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-}
-
-.map-legend h3 {
-    color: #2c3e50;
-    margin-bottom: 1rem;
-    font-size: 1.2rem;
-}
+/* Old map-legend styles removed - now using floating legend */
 
 .country-item {
     display: flex;
@@ -779,13 +765,7 @@ body {
     color: #9ca3af;
 }
 
-.dark .map-legend {
-    background: #2a2a3a;
-}
-
-.dark .map-legend h3 {
-    color: #e0e6ed;
-}
+/* Old dark map-legend styles removed */
 
 .dark .country-item:hover {
     background: #333;
@@ -913,6 +893,11 @@ body {
 
 .dark .chart-header h3 {
     color: #e0e6ed;
+}
+
+.dark #floating-legend {
+    background: rgba(30, 30, 46, 0.95) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
 }
 
 /* Utility Classes */
