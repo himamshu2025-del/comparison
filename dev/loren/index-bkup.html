@@ -25,7 +25,6 @@
     <script src="https://unpkg.com/motion@10.16.2/dist/motion.js"></script>
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <script src="https://unpkg.com/papaparse@5.4.1/papaparse.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
     
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -133,64 +132,24 @@
 
     <!-- Dynamic Chart Sections -->
     <section class="chart-sections">
-        <!-- Dynamic Analysis Tab -->
+        <!-- Air Emissions Tab -->
         <div id="air-section" class="chart-section active">
             <div class="section-header">
-                <h2 id="analysis-title">🌫️ Air Emissions Impact Analysis</h2>
-                <p class="section-description" id="analysis-description">Comparing greenhouse gas and air pollutant emissions from trade activities (SDG 13: Climate Action)</p>
-                
-                <!-- Analysis Controls -->
-                <div class="analysis-controls">
-                    <div class="control-group">
-                        <label for="factor-grouping">Analysis Focus:</label>
-                        <select id="factor-grouping" class="analysis-select">
-                            <option value="air_emissions">🌫️ Air Emissions & Climate Impact</option>
-                            <option value="employment">👥 Employment & Social Impact</option>
-                            <option value="energy">⚡ Energy & Resource Intensity</option>
-                            <option value="water">💧 Water Usage & Sustainability</option>
-                            <option value="materials">🏗️ Materials & Circular Economy</option>
-                            <option value="health">🏥 Health & Environmental Quality</option>
-                        </select>
-                    </div>
-                    <div class="control-group">
-                        <label for="industry-filter">Industry Focus:</label>
-                        <select id="industry-filter" class="analysis-select">
-                            <option value="all">All Industries</option>
-                            <option value="AGRIC">Agriculture & Food</option>
-                            <option value="MANUF">Manufacturing</option>
-                            <option value="ENERG">Energy & Mining</option>
-                            <option value="CONST">Construction</option>
-                            <option value="TRANS">Transport & Logistics</option>
-                            <option value="SERVI">Services & Finance</option>
-                        </select>
-                    </div>
-                </div>
+                <h2>🌫️ Air Emissions Impact Analysis</h2>
+                <p class="section-description">Comparing greenhouse gas and air pollutant emissions from trade activities (SDG 13: Climate Action)</p>
             </div>
-            
             <div class="chart-grid">
                 <div class="chart-container">
-                    <div class="chart-header">
-                        <h3 id="chart1-title">Trade Flow Impact Comparison</h3>
-                    </div>
-                    <div id="chart1" class="echarts-container"></div>
+                    <canvas id="air-emissions-comparison"></canvas>
                 </div>
                 <div class="chart-container">
-                    <div class="chart-header">
-                        <h3 id="chart2-title">Industry Sector Analysis</h3>
-                    </div>
-                    <div id="chart2" class="echarts-container"></div>
+                    <canvas id="co2-breakdown"></canvas>
                 </div>
                 <div class="chart-container">
-                    <div class="chart-header">
-                        <h3 id="chart3-title">Country Performance Matrix</h3>
-                    </div>
-                    <div id="chart3" class="echarts-container"></div>
+                    <canvas id="air-pollutants-radar"></canvas>
                 </div>
                 <div class="chart-container">
-                    <div class="chart-header">
-                        <h3 id="chart4-title">Trade Network Analysis</h3>
-                    </div>
-                    <div id="chart4" class="echarts-container"></div>
+                    <canvas id="emissions-timeline"></canvas>
                 </div>
             </div>
         </div>
