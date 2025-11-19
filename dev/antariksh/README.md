@@ -73,6 +73,10 @@ Output the complete code for all 3 files in one response.
 - Real CSV loading logic was implemented (no static placeholder arrays).
 - Debug console panel currently prints which CSVs load successfully vs missing.
 
+## Next Goal 
+- Enhance the data representaion
+- Add better visualizations
+
 ## Notes for collaborators
 - GitHub RAW CSV links were used intentionally so the app can run directly from the browser without needing local dataset folders.
 - Only **3 countries** (US, IN, RU) were used in this prototype to keep testing fast and visual. Full expansion to all countries will happen once dataset structure is confirmed.
