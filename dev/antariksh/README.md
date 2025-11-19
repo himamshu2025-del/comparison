@@ -5,16 +5,16 @@ from EXIOBASE tradeflow data using the Model Earth **comparison** project.
 
 I will log my successful prompts here and refine them over time.
 
-## Prompt Experiment 2 — GitHub RAW CSV Trade Dashboard (US / IN / RU)
+## Prompt Experiment 1 — GitHub RAW CSV Trade Dashboard (US / IN / RU)
 
 ### Goal
 Create a dashboard that pulls **real EXIOBASE tradeflow CSV data** from GitHub for 3 countries (US, IN, RU) and visualizes international trade and environmental impacts using Leaflet + ECharts.
 
 ### Prompt Used
 
-```text
+
 I need you to create a data visualization dashboard with 3 files (index.html, script.js, styles.css) that displays international trade and environmental impact data.
-Requirements:
+1.Requirements:
 
 Data Source: Load CSV files from this GitHub repository: https://raw.githubusercontent.com/ModelEarth/trade-data/main/year/2019/
 
@@ -22,7 +22,7 @@ The data structure is documented here: https://github.com/ModelEarth/exiobase/bl
 Key files: industry.csv, factor.csv, and for each country (US, IN, RU) there are trade.csv and trade_factor.csv files in domestic/, exports/, and imports/ folders
 
 
-Dashboard Features:
+2.Dashboard Features:
 
 Interactive Leaflet map to select countries (US, India, Russia)
 Summary cards showing environmental impact totals for each selected country
@@ -37,7 +37,7 @@ Industry breakdown bar chart
 Dynamic insights section with bullet points
 
 
-Data Processing:
+3.Data Processing:
 
 Load industry.csv and factor.csv first for reference lookups
 Map factor.csv's "extension" column to environmental groups (air, water, energy, etc.)
@@ -46,7 +46,7 @@ Use trade.csv to map trade_id to industry information
 Aggregate impact_value from trade_factor.csv by factor group
 
 
-Design:
+4.Design:
 
 Modern, clean design with gradient hero header
 Card-based layout for countries
@@ -54,7 +54,7 @@ Responsive charts that update when countries or factor groups change
 Include a debug panel showing data loading progress
 
 
-Technical:
+5.Technical:
 
 Use PapaParse to load CSV files
 Use ECharts for visualizations
