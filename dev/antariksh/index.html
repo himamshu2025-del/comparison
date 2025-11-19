@@ -1,3 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>International Trade & Environmental Impact Comparison</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+</head>
+<body>
+    <header class="hero">
+        <h1>International Trade & Environmental Impact Comparison</h1>
+        <p class="subtitle">Analyzing sustainability across nations in alignment with UN Sustainable Development Goals</p>
+    </header>
 
-<p>This file will hold the generated comparison page content from my first prompt experiment (India vs United States).</p>
-<p>Coming soon.</p>
+    <main class="container">
+        <div id="loading-status" class="status-message">Initializing...</div>
+        
+        <div id="debug-panel" class="debug-panel">
+            <h3>Data Loading Status <button id="toggle-debug" class="toggle-btn">Hide</button></h3>
+            <div id="debug-log"></div>
+        </div>
+
+        <section class="map-section">
+            <h2>Select Countries for Comparison</h2>
+            <div id="map"></div>
+        </section>
+
+        <section class="summary-section">
+            <div id="country-cards"></div>
+        </section>
+
+        <section class="controls-section">
+            <label for="factor-group">Environmental Factor Group:</label>
+            <select id="factor-group">
+                <option value="air">Air Emissions</option>
+                <option value="water">Water Use & Pollution</option>
+                <option value="energy">Energy Consumption</option>
+                <option value="land">Land Use</option>
+                <option value="materials">Material Resources</option>
+                <option value="employment">Employment</option>
+            </select>
+        </section>
+
+        <section class="charts-section">
+            <div class="chart-container">
+                <h3>Country Comparison</h3>
+                <div id="chart-comparison" class="chart"></div>
+            </div>
+            <div class="chart-container">
+                <h3>Trade Flow Breakdown</h3>
+                <div id="chart-tradeflow" class="chart"></div>
+            </div>
+            <div class="chart-container">
+                <h3>Industry Breakdown</h3>
+                <div id="chart-industry" class="chart"></div>
+            </div>
+        </section>
+
+        <section class="insights-section">
+            <h2>Key Insights</h2>
+            <div id="insights"></div>
+        </section>
+    </main>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.4.3/echarts.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
