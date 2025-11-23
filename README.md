@@ -6,7 +6,7 @@ Frontends for tradeflow data with a UN Goal focus.
 2. Prepare a vibe prompt in your readme and post a link to your page in our Discord.
 3. Gather feedback from others and refine your vibe prompt.
 
-Veiw initial comparison vibe dev output:
+View initial comparison vibe dev output:
 
 [/comparison/dev/loren](dev/loren/)
 
@@ -18,3 +18,6 @@ Generate the overview by running Claude in the exiobase/tradeflow folder.
 We're not using the scripts external that are external to tradeflow folder.
 
 [github.com/ModelEarth/exiobase/tree/main/tradeflow](https://github.com/ModelEarth/exiobase/tree/main/tradeflow)
+
+# Progress (11/20/2025)
+https://patilantariksh.github.io/comparison/dev/antariksh/
