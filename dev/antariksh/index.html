@@ -23,7 +23,167 @@
 
         <section class="map-section">
             <h2>Select Countries for Comparison</h2>
-            <div id="map"></div>
+            <p class="section-description">Select countries from the map or use the regional panels below</p>
+            
+            <div class="map-controls-wrapper">
+                <div class="country-selector-panel">
+                    <div class="selector-header">
+                        <h3>Country Selection</h3>
+                        <div class="selection-actions">
+                            <button class="action-btn select-all" onclick="selectAllCountries()">
+                                <span>✓</span> All
+                            </button>
+                            <button class="action-btn clear-all" onclick="clearAllCountries()">
+                                <span>✕</span> Clear
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="region-selector">
+                        <div class="region-section">
+                            <button class="region-toggle" onclick="toggleRegion('americas')">
+                                <span class="region-icon">🌎</span>
+                                <span>Americas</span>
+                                <span class="toggle-arrow">▼</span>
+                            </button>
+                            <div id="region-americas" class="country-buttons-region">
+                                <button class="country-btn" data-country="US" onclick="toggleCountry('US')">
+                                    <span class="btn-flag">🇺🇸</span>
+                                    <span class="btn-name">United States <span class="country-code">US</span></span>
+                                </button>
+                                <button class="country-btn" data-country="CA" onclick="toggleCountry('CA')">
+                                    <span class="btn-flag">🇨🇦</span>
+                                    <span class="btn-name">Canada <span class="country-code">CA</span></span>
+                                </button>
+                                <button class="country-btn" data-country="MX" onclick="toggleCountry('MX')">
+                                    <span class="btn-flag">🇲🇽</span>
+                                    <span class="btn-name">Mexico <span class="country-code">MX</span></span>
+                                </button>
+                                <button class="country-btn" data-country="BR" onclick="toggleCountry('BR')">
+                                    <span class="btn-flag">🇧🇷</span>
+                                    <span class="btn-name">Brazil <span class="country-code">BR</span></span>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="region-section">
+                            <button class="region-toggle" onclick="toggleRegion('europe')">
+                                <span class="region-icon">🇪🇺</span>
+                                <span>Europe</span>
+                                <span class="toggle-arrow">▼</span>
+                            </button>
+                            <div id="region-europe" class="country-buttons-region" style="display: none;">
+                                <button class="country-btn" data-country="GB" onclick="toggleCountry('GB')">
+                                    <span class="btn-flag">🇬🇧</span>
+                                    <span class="btn-name">United Kingdom <span class="country-code">GB</span></span>
+                                </button>
+                                <button class="country-btn" data-country="DE" onclick="toggleCountry('DE')">
+                                    <span class="btn-flag">🇩🇪</span>
+                                    <span class="btn-name">Germany <span class="country-code">DE</span></span>
+                                </button>
+                                <button class="country-btn" data-country="FR" onclick="toggleCountry('FR')">
+                                    <span class="btn-flag">🇫🇷</span>
+                                    <span class="btn-name">France <span class="country-code">FR</span></span>
+                                </button>
+                                <button class="country-btn" data-country="IT" onclick="toggleCountry('IT')">
+                                    <span class="btn-flag">🇮🇹</span>
+                                    <span class="btn-name">Italy <span class="country-code">IT</span></span>
+                                </button>
+                                <button class="country-btn" data-country="ES" onclick="toggleCountry('ES')">
+                                    <span class="btn-flag">🇪🇸</span>
+                                    <span class="btn-name">Spain <span class="country-code">ES</span></span>
+                                </button>
+                                <button class="country-btn" data-country="NL" onclick="toggleCountry('NL')">
+                                    <span class="btn-flag">🇳🇱</span>
+                                    <span class="btn-name">Netherlands <span class="country-code">NL</span></span>
+                                </button>
+                                <button class="country-btn" data-country="RU" onclick="toggleCountry('RU')">
+                                    <span class="btn-flag">🇷🇺</span>
+                                    <span class="btn-name">Russia <span class="country-code">RU</span></span>
+                                </button>
+                                <button class="country-btn" data-country="PL" onclick="toggleCountry('PL')">
+                                    <span class="btn-flag">🇵🇱</span>
+                                    <span class="btn-name">Poland <span class="country-code">PL</span></span>
+                                </button>
+                                <button class="country-btn" data-country="SE" onclick="toggleCountry('SE')">
+                                    <span class="btn-flag">🇸🇪</span>
+                                    <span class="btn-name">Sweden <span class="country-code">SE</span></span>
+                                </button>
+                                <button class="country-btn small" data-country="BE" onclick="toggleCountry('BE')">
+                                    <span class="btn-flag">🇧🇪</span>
+                                    <span class="btn-name">Belgium <span class="country-code">BE</span></span>
+                                </button>
+                                <button class="country-btn small" data-country="AT" onclick="toggleCountry('AT')">
+                                    <span class="btn-flag">🇦🇹</span>
+                                    <span class="btn-name">Austria <span class="country-code">AT</span></span>
+                                </button>
+                                <button class="country-btn small" data-country="NO" onclick="toggleCountry('NO')">
+                                    <span class="btn-flag">🇳🇴</span>
+                                    <span class="btn-name">Norway <span class="country-code">NO</span></span>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="region-section">
+                            <button class="region-toggle" onclick="toggleRegion('asia')">
+                                <span class="region-icon">🌏</span>
+                                <span>Asia</span>
+                                <span class="toggle-arrow">▼</span>
+                            </button>
+                            <div id="region-asia" class="country-buttons-region" style="display: none;">
+                                <button class="country-btn" data-country="CN" onclick="toggleCountry('CN')">
+                                    <span class="btn-flag">🇨🇳</span>
+                                    <span class="btn-name">China <span class="country-code">CN</span></span>
+                                </button>
+                                <button class="country-btn" data-country="JP" onclick="toggleCountry('JP')">
+                                    <span class="btn-flag">🇯🇵</span>
+                                    <span class="btn-name">Japan <span class="country-code">JP</span></span>
+                                </button>
+                                <button class="country-btn" data-country="IN" onclick="toggleCountry('IN')">
+                                    <span class="btn-flag">🇮🇳</span>
+                                    <span class="btn-name">India <span class="country-code">IN</span></span>
+                                </button>
+                                <button class="country-btn" data-country="KR" onclick="toggleCountry('KR')">
+                                    <span class="btn-flag">🇰🇷</span>
+                                    <span class="btn-name">South Korea <span class="country-code">KR</span></span>
+                                </button>
+                                <button class="country-btn" data-country="ID" onclick="toggleCountry('ID')">
+                                    <span class="btn-flag">🇮🇩</span>
+                                    <span class="btn-name">Indonesia <span class="country-code">ID</span></span>
+                                </button>
+                                <button class="country-btn" data-country="TW" onclick="toggleCountry('TW')">
+                                    <span class="btn-flag">🇹🇼</span>
+                                    <span class="btn-name">Taiwan <span class="country-code">TW</span></span>
+                                </button>
+                                <button class="country-btn" data-country="TR" onclick="toggleCountry('TR')">
+                                    <span class="btn-flag">🇹🇷</span>
+                                    <span class="btn-name">Turkey <span class="country-code">TR</span></span>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="region-section">
+                            <button class="region-toggle" onclick="toggleRegion('other')">
+                                <span class="region-icon">🌍</span>
+                                <span>Other Regions</span>
+                                <span class="toggle-arrow">▼</span>
+                            </button>
+                            <div id="region-other" class="country-buttons-region" style="display: none;">
+                                <button class="country-btn" data-country="AU" onclick="toggleCountry('AU')">
+                                    <span class="btn-flag">🇦🇺</span>
+                                    <span class="btn-name">Australia <span class="country-code">AU</span></span>
+                                </button>
+                                <button class="country-btn" data-country="ZA" onclick="toggleCountry('ZA')">
+                                    <span class="btn-flag">🇿🇦</span>
+                                    <span class="btn-name">South Africa <span class="country-code">ZA</span></span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="map"></div>
+            </div>
         </section>
 
         <section class="summary-section">
@@ -42,18 +202,180 @@
             </select>
         </section>
 
-        <section class="charts-section">
-            <div class="chart-container">
-                <h3>Country Comparison</h3>
-                <div id="chart-comparison" class="chart"></div>
+        <!-- Storyline Section -->
+        <section class="storyline-section">
+            <div class="section-header">
+                <div class="section-icon">📖</div>
+                <div class="section-title-group">
+                    <h2>Environmental Impact Story</h2>
+                    <p class="section-subtitle">A narrative journey through each country's environmental footprint</p>
+                </div>
             </div>
-            <div class="chart-container">
-                <h3>Trade Flow Breakdown</h3>
-                <div id="chart-tradeflow" class="chart"></div>
+            <div id="storyline-content"></div>
+        </section>
+
+        <!-- Core Comparison Charts -->
+        <section class="charts-section category-section">
+            <div class="section-header">
+                <div class="section-icon">📊</div>
+                <div class="section-title-group">
+                    <h2>Core Comparative Analysis</h2>
+                    <p class="section-subtitle">Fundamental metrics and breakdowns</p>
+                </div>
             </div>
-            <div class="chart-container">
-                <h3>Industry Breakdown</h3>
-                <div id="chart-industry" class="chart"></div>
+            
+            <div class="chart-grid">
+                <div class="chart-container">
+                    <div class="chart-header">
+                        <h3>Country Comparison</h3>
+                        <span class="chart-badge">Primary</span>
+                    </div>
+                    <p class="chart-description">Total environmental impact by country</p>
+                    <div id="chart-comparison" class="chart"></div>
+                </div>
+                <div class="chart-container">
+                    <div class="chart-header">
+                        <h3>Trade Flow Breakdown</h3>
+                        <span class="chart-badge">Stacked</span>
+                    </div>
+                    <p class="chart-description">Domestic vs exports vs imports</p>
+                    <div id="chart-tradeflow" class="chart"></div>
+                </div>
+                <div class="chart-container">
+                    <div class="chart-header">
+                        <h3>Industry Breakdown</h3>
+                        <span class="chart-badge">Multi-Series</span>
+                    </div>
+                    <p class="chart-description">Top 15 industries by impact</p>
+                    <div id="chart-industry" class="chart"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Impact Intensity Gauges -->
+        <section class="gauges-section category-section">
+            <div class="section-header">
+                <div class="section-icon">⚡</div>
+                <div class="section-title-group">
+                    <h2>Impact Intensity Meters</h2>
+                    <p class="section-subtitle">Real-time intensity indicators for each country</p>
+                </div>
+            </div>
+            <div id="gauges-container" class="gauges-grid"></div>
+        </section>
+
+        <!-- Multi-Dimensional Analysis -->
+        <section class="multidim-section category-section">
+            <div class="section-header">
+                <div class="section-icon">🎯</div>
+                <div class="section-title-group">
+                    <h2>Multi-Dimensional Analysis</h2>
+                    <p class="section-subtitle">Complex relationships and correlations</p>
+                </div>
+            </div>
+            
+            <div class="chart-row">
+                <div class="chart-container-wide featured-chart">
+                    <div class="chart-header">
+                        <h3>Multi-Dimensional Impact Bubble Chart</h3>
+                        <span class="chart-badge">3D Visualization</span>
+                    </div>
+                    <p class="chart-description">Bubble size = Total impact | X-axis = Domestic | Y-axis = Exports</p>
+                    <div id="chart-bubble" class="chart-large"></div>
+                </div>
+            </div>
+
+            <div class="chart-row">
+                <div class="chart-container">
+                    <div class="chart-header">
+                        <h3>Environmental Factor Radar</h3>
+                        <span class="chart-badge">Multi-Factor</span>
+                    </div>
+                    <p class="chart-description">All 6 environmental dimensions at once</p>
+                    <div id="chart-radar" class="chart"></div>
+                </div>
+                <div class="chart-container">
+                    <div class="chart-header">
+                        <h3>Cumulative Impact Growth</h3>
+                        <span class="chart-badge">Trend</span>
+                    </div>
+                    <p class="chart-description">Stacked area showing contributions</p>
+                    <div id="chart-area" class="chart"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Distribution & Composition -->
+        <section class="distribution-section category-section">
+            <div class="section-header">
+                <div class="section-icon">📈</div>
+                <div class="section-title-group">
+                    <h2>Distribution & Composition</h2>
+                    <p class="section-subtitle">Proportional breakdowns and hierarchies</p>
+                </div>
+            </div>
+            
+            <div class="chart-row">
+                <div class="chart-container">
+                    <div class="chart-header">
+                        <h3>Trade Flow Distribution</h3>
+                        <span class="chart-badge">Proportional</span>
+                    </div>
+                    <p class="chart-description">Share of domestic, exports, and imports</p>
+                    <div id="chart-pie" class="chart"></div>
+                </div>
+                <div class="chart-container-wide">
+                    <div class="chart-header">
+                        <h3>Comparative Tree Map</h3>
+                        <span class="chart-badge">Hierarchical</span>
+                    </div>
+                    <p class="chart-description">Nested view of countries and trade flows</p>
+                    <div id="chart-treemap" class="chart-large"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pattern Recognition -->
+        <section class="pattern-section category-section">
+            <div class="section-header">
+                <div class="section-icon">🔍</div>
+                <div class="section-title-group">
+                    <h2>Pattern Recognition</h2>
+                    <p class="section-subtitle">Identify trends and hotspots</p>
+                </div>
+            </div>
+            
+            <div class="chart-row">
+                <div class="chart-container-wide featured-chart">
+                    <div class="chart-header">
+                        <h3>Country Impact Heatmap</h3>
+                        <span class="chart-badge">Matrix View</span>
+                    </div>
+                    <p class="chart-description">Environmental impacts across all factor groups</p>
+                    <div id="chart-heatmap" class="chart-large"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Flow Visualization -->
+        <section class="flow-section category-section">
+            <div class="section-header">
+                <div class="section-icon">🌊</div>
+                <div class="section-title-group">
+                    <h2>Flow Visualization</h2>
+                    <p class="section-subtitle">Dynamic pathways of environmental impact</p>
+                </div>
+            </div>
+            
+            <div class="chart-row">
+                <div class="chart-container-wide featured-chart">
+                    <div class="chart-header">
+                        <h3>Trade Flow Sankey Diagram</h3>
+                        <span class="chart-badge">Flow Diagram</span>
+                    </div>
+                    <p class="chart-description">Visual streams showing impact magnitude through trade channels</p>
+                    <div id="chart-sankey" class="chart-large"></div>
+                </div>
             </div>
         </section>
 
