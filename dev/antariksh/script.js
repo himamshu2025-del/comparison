@@ -1,58 +1,23 @@
+// ALL 14 COUNTRIES VERIFIED IN DATASET
 const COUNTRIES = {
-    // North America
     US: { name: 'United States', coords: [37.09, -95.71], flag: '🇺🇸', color: '#4A90E2', region: 'Americas' },
     CA: { name: 'Canada', coords: [56.13, -106.35], flag: '🇨🇦', color: '#E74C3C', region: 'Americas' },
-    MX: { name: 'Mexico', coords: [23.63, -102.55], flag: '🇲🇽', color: '#16A085', region: 'Americas' },
     BR: { name: 'Brazil', coords: [-14.24, -51.93], flag: '🇧🇷', color: '#27AE60', region: 'Americas' },
     
-    // Europe
     GB: { name: 'United Kingdom', coords: [55.38, -3.44], flag: '🇬🇧', color: '#3498DB', region: 'Europe' },
     DE: { name: 'Germany', coords: [51.17, 10.45], flag: '🇩🇪', color: '#9B59B6', region: 'Europe' },
     FR: { name: 'France', coords: [46.23, 2.21], flag: '🇫🇷', color: '#E67E22', region: 'Europe' },
     IT: { name: 'Italy', coords: [41.87, 12.57], flag: '🇮🇹', color: '#1ABC9C', region: 'Europe' },
-    ES: { name: 'Spain', coords: [40.46, -3.75], flag: '🇪🇸', color: '#F39C12', region: 'Europe' },
-    NL: { name: 'Netherlands', coords: [52.13, 5.29], flag: '🇳🇱', color: '#E74C3C', region: 'Europe' },
-    BE: { name: 'Belgium', coords: [50.50, 4.48], flag: '🇧🇪', color: '#34495E', region: 'Europe' },
-    AT: { name: 'Austria', coords: [47.52, 14.55], flag: '🇦🇹', color: '#C0392B', region: 'Europe' },
-    SE: { name: 'Sweden', coords: [60.13, 18.64], flag: '🇸🇪', color: '#2980B9', region: 'Europe' },
-    PL: { name: 'Poland', coords: [51.92, 19.15], flag: '🇵🇱', color: '#8E44AD', region: 'Europe' },
-    NO: { name: 'Norway', coords: [60.47, 8.47], flag: '🇳🇴', color: '#16A085', region: 'Europe' },
-    DK: { name: 'Denmark', coords: [56.26, 9.50], flag: '🇩🇰', color: '#D35400', region: 'Europe' },
-    FI: { name: 'Finland', coords: [61.92, 25.75], flag: '🇫🇮', color: '#27AE60', region: 'Europe' },
-    PT: { name: 'Portugal', coords: [39.40, -8.22], flag: '🇵🇹', color: '#2C3E50', region: 'Europe' },
-    GR: { name: 'Greece', coords: [39.07, 21.82], flag: '🇬🇷', color: '#2980B9', region: 'Europe' },
-    CZ: { name: 'Czech Republic', coords: [49.82, 15.47], flag: '🇨🇿', color: '#8E44AD', region: 'Europe' },
-    RO: { name: 'Romania', coords: [45.94, 24.97], flag: '🇷🇴', color: '#E67E22', region: 'Europe' },
-    HU: { name: 'Hungary', coords: [47.16, 19.50], flag: '🇭🇺', color: '#16A085', region: 'Europe' },
-    IE: { name: 'Ireland', coords: [53.41, -8.24], flag: '🇮🇪', color: '#27AE60', region: 'Europe' },
-    SK: { name: 'Slovakia', coords: [48.67, 19.70], flag: '🇸🇰', color: '#3498DB', region: 'Europe' },
-    BG: { name: 'Bulgaria', coords: [42.73, 25.49], flag: '🇧🇬', color: '#E74C3C', region: 'Europe' },
-    HR: { name: 'Croatia', coords: [45.10, 15.20], flag: '🇭🇷', color: '#9B59B6', region: 'Europe' },
-    SI: { name: 'Slovenia', coords: [46.15, 14.99], flag: '🇸🇮', color: '#1ABC9C', region: 'Europe' },
-    LT: { name: 'Lithuania', coords: [55.17, 23.88], flag: '🇱🇹', color: '#F39C12', region: 'Europe' },
-    LV: { name: 'Latvia', coords: [56.88, 24.60], flag: '🇱🇻', color: '#E67E22', region: 'Europe' },
-    EE: { name: 'Estonia', coords: [58.60, 25.01], flag: '🇪🇪', color: '#34495E', region: 'Europe' },
-    LU: { name: 'Luxembourg', coords: [49.82, 6.13], flag: '🇱🇺', color: '#C0392B', region: 'Europe' },
-    MT: { name: 'Malta', coords: [35.94, 14.38], flag: '🇲🇹', color: '#2980B9', region: 'Europe' },
-    CY: { name: 'Cyprus', coords: [35.13, 33.43], flag: '🇨🇾', color: '#16A085', region: 'Europe' },
-    
-    // Asia
-    CN: { name: 'China', coords: [35.86, 104.20], flag: '🇨🇳', color: '#E74C3C', region: 'Asia' },
-    JP: { name: 'Japan', coords: [36.20, 138.25], flag: '🇯🇵', color: '#9B59B6', region: 'Asia' },
-    IN: { name: 'India', coords: [20.59, 78.96], flag: '🇮🇳', color: '#E67E22', region: 'Asia' },
-    KR: { name: 'South Korea', coords: [35.91, 127.77], flag: '🇰🇷', color: '#3498DB', region: 'Asia' },
-    ID: { name: 'Indonesia', coords: [-0.79, 113.92], flag: '🇮🇩', color: '#1ABC9C', region: 'Asia' },
-    TW: { name: 'Taiwan', coords: [23.70, 121.00], flag: '🇹🇼', color: '#27AE60', region: 'Asia' },
-    TR: { name: 'Turkey', coords: [38.96, 35.24], flag: '🇹🇷', color: '#E74C3C', region: 'Asia' },
-    
-    // Russia
     RU: { name: 'Russia', coords: [61.52, 105.31], flag: '🇷🇺', color: '#C0392B', region: 'Europe' },
     
-    // Oceania
-    AU: { name: 'Australia', coords: [-25.27, 133.78], flag: '🇦🇺', color: '#F39C12', region: 'Oceania' },
+    CN: { name: 'China', coords: [35.86, 104.20], flag: '🇨🇳', color: '#E74C3C', region: 'Asia' },
+    JP: { name: 'Japan', coords: [36.20, 138.25], flag: '🇯🇵', color: '#F39C12', region: 'Asia' },
+    IN: { name: 'India', coords: [20.59, 78.96], flag: '🇮🇳', color: '#16A085', region: 'Asia' },
+    KR: { name: 'South Korea', coords: [35.91, 127.77], flag: '🇰🇷', color: '#8E44AD', region: 'Asia' },
     
-    // Africa
-    ZA: { name: 'South Africa', coords: [-30.56, 22.94], flag: '🇿🇦', color: '#16A085', region: 'Africa' }
+    AU: { name: 'Australia', coords: [-25.27, 133.78], flag: '🇦🇺', color: '#D35400', region: 'Oceania' },
+    
+    WM: { name: 'Middle East', coords: [29.31, 47.48], flag: '🌍', color: '#7F8C8D', region: 'Middle East' }
 };
 
 const DATA_BASE_PATH = 'https://raw.githubusercontent.com/ModelEarth/trade-data/main/year/2019';
@@ -121,6 +86,15 @@ function showStatus(message, isError = false) {
     debugLog(message, isError);
 }
 
+function formatNumber(num) {
+    if (num === 0 || isNaN(num)) return '0';
+    const absNum = Math.abs(num);
+    if (absNum >= 1e9) return (num / 1e9).toFixed(2) + 'B';
+    if (absNum >= 1e6) return (num / 1e6).toFixed(2) + 'M';
+    if (absNum >= 1e3) return (num / 1e3).toFixed(2) + 'K';
+    return num.toFixed(2);
+}
+
 function initMap() {
     debugLog('Initializing map...');
     map = L.map('map').setView([30, 20], 2);
@@ -139,6 +113,11 @@ function initMap() {
 }
 
 function toggleCountry(code) {
+    if (!COUNTRIES[code]) {
+        debugLog(`Country ${code} not found in dataset`, true);
+        return;
+    }
+    
     if (selectedCountries.has(code)) {
         selectedCountries.delete(code);
         debugLog(`Deselected ${COUNTRIES[code].name}`);
@@ -183,7 +162,7 @@ function toggleRegion(regionId) {
 function updateCountryButtonStates() {
     document.querySelectorAll('.country-btn').forEach(btn => {
         const country = btn.dataset.country;
-        if (selectedCountries.has(country)) {
+        if (country && selectedCountries.has(country)) {
             btn.classList.add('active');
         } else {
             btn.classList.remove('active');
@@ -209,6 +188,8 @@ function updateCountryCards() {
     }
     
     selectedCountries.forEach(code => {
+        if (!COUNTRIES[code]) return;
+        
         const country = COUNTRIES[code];
         const card = document.createElement('div');
         card.className = 'country-card';
@@ -248,6 +229,70 @@ function updateCountryCards() {
     });
 }
 
+function calculateTotalForCountry(code, factorGroup) {
+    if (!tradeData[code]) return 0;
+    
+    let total = 0;
+    TRADE_FLOWS.forEach(flow => {
+        total += calculateTotalByFlow(code, factorGroup, flow);
+    });
+    return total;
+}
+
+function calculateTotalByFlow(code, factorGroup, flow) {
+    if (!tradeData[code] || !tradeData[code][flow] || !tradeData[code][flow].trade_factor) {
+        return 0;
+    }
+    
+    const tradeFactorData = tradeData[code][flow].trade_factor;
+    let total = 0;
+    
+    tradeFactorData.forEach(row => {
+        const factorId = row.factor_id;
+        const factor = factorLookup[factorId];
+        
+        if (factor && factor.group === factorGroup) {
+            const value = parseFloat(row.impact_value) || parseFloat(row.coefficient) || 0;
+            total += value;
+        }
+    });
+    
+    return total;
+}
+
+function calculateByIndustry(code, factorGroup) {
+    const result = {};
+    
+    if (!tradeData[code]) return result;
+    
+    TRADE_FLOWS.forEach(flow => {
+        if (!tradeData[code][flow] || !tradeData[code][flow].trade_factor) return;
+        
+        const tradeFactorData = tradeData[code][flow].trade_factor;
+        
+        tradeFactorData.forEach(row => {
+            const factorId = row.factor_id;
+            const factor = factorLookup[factorId];
+            
+            if (factor && factor.group === factorGroup) {
+                const tradeId = row.trade_id;
+                const trade = tradeLookup[code]?.[flow]?.[tradeId];
+                
+                if (trade) {
+                    const industryId = trade.industry_id;
+                    const industry = industryLookup[industryId];
+                    const industryName = industry ? industry.name : industryId;
+                    
+                    const value = parseFloat(row.impact_value) || parseFloat(row.coefficient) || 0;
+                    result[industryName] = (result[industryName] || 0) + value;
+                }
+            }
+        });
+    });
+    
+    return result;
+}
+
 function updateStoryline() {
     const container = document.getElementById('storyline-content');
     
@@ -258,7 +303,9 @@ function updateStoryline() {
     
     let storylineHTML = '<div class="storyline-wrapper">';
     
-    selectedCountries.forEach((code, index) => {
+    Array.from(selectedCountries).forEach((code, index) => {
+        if (!COUNTRIES[code]) return;
+        
         const country = COUNTRIES[code];
         const total = calculateTotalForCountry(code, currentFactorGroup);
         const domestic = calculateTotalByFlow(code, currentFactorGroup, 'domestic');
@@ -309,9 +356,9 @@ function updateStoryline() {
                     </div>
                     <div class="storyline-progress">
                         <div class="progress-bar">
-                            <div class="progress-fill" style="width: ${(domestic/total)*100}%; background: #5470C6"></div>
-                            <div class="progress-fill" style="width: ${(exports/total)*100}%; background: #91CC75"></div>
-                            <div class="progress-fill" style="width: ${(imports/total)*100}%; background: #FAC858"></div>
+                            <div class="progress-fill" style="width: ${total > 0 ? (domestic/total)*100 : 0}%; background: ${country.color}"></div>
+                            <div class="progress-fill" style="width: ${total > 0 ? (exports/total)*100 : 0}%; background: ${country.color}; opacity: 0.7"></div>
+                            <div class="progress-fill" style="width: ${total > 0 ? (imports/total)*100 : 0}%; background: ${country.color}; opacity: 0.4"></div>
                         </div>
                     </div>
                 </div>
@@ -323,84 +370,13 @@ function updateStoryline() {
     container.innerHTML = storylineHTML;
 }
 
-function formatNumber(num) {
-    if (num === 0) return '0';
-    if (num >= 1000000000) return (num / 1000000000).toFixed(2) + 'B';
-    if (num >= 1000000) return (num / 1000000).toFixed(2) + 'M';
-    if (num >= 1000) return (num / 1000).toFixed(2) + 'K';
-    return num.toFixed(2);
-}
-
-function calculateTotalForCountry(code, factorGroup) {
-    let total = 0;
-    TRADE_FLOWS.forEach(flow => {
-        total += calculateTotalByFlow(code, factorGroup, flow);
-    });
-    return total;
-}
-
-function calculateTotalByFlow(code, factorGroup, flow) {
-    let total = 0;
-    const countryData = tradeData[code];
-    if (!countryData || !countryData[flow] || !countryData[flow].trade_factor) {
-        return 0;
-    }
-
-    const tradeFactorData = countryData[flow].trade_factor;
-    
-    tradeFactorData.forEach(row => {
-        const factorId = row.factor_id;
-        if (!factorId) return;
-        
-        const factor = factorLookup[factorId];
-        if (factor && factor.group === factorGroup) {
-            const value = parseFloat(row.impact_value || row.coefficient || 0);
-            if (!isNaN(value) && value !== 0) {
-                total += Math.abs(value);
-            }
-        }
-    });
-
-    return total;
-}
-
-function calculateByIndustry(code, factorGroup) {
-    const industryTotals = {};
-    const countryData = tradeData[code];
-    if (!countryData) return industryTotals;
-
-    TRADE_FLOWS.forEach(flow => {
-        const flowData = countryData[flow];
-        if (flowData && flowData.trade_factor && flowData.trade) {
-            flowData.trade_factor.forEach(row => {
-                const factorId = row.factor_id;
-                if (!factorId) return;
-                
-                const factor = factorLookup[factorId];
-                if (factor && factor.group === factorGroup) {
-                    const tradeId = row.trade_id;
-                    const tradeRow = tradeLookup[code]?.[flow]?.[tradeId];
-                    
-                    if (tradeRow) {
-                        const industryId = tradeRow.industry2_id || tradeRow.industry_id;
-                        const industryName = industryLookup[industryId]?.name || industryId || 'Unknown';
-                        const value = parseFloat(row.impact_value || row.coefficient || 0);
-                        
-                        if (!isNaN(value) && value !== 0) {
-                            industryTotals[industryName] = (industryTotals[industryName] || 0) + Math.abs(value);
-                        }
-                    }
-                }
-            });
-        }
-    });
-
-    return industryTotals;
-}
-
 function updateCharts() {
+    if (!dataLoadingComplete) return;
+    
     if (selectedCountries.size === 0) {
-        Object.values(charts).forEach(chart => chart.clear && chart.clear());
+        ['comparison', 'tradeflow', 'industry'].forEach(type => {
+            if (charts[type]) charts[type].clear();
+        });
         return;
     }
     
@@ -410,9 +386,18 @@ function updateCharts() {
 }
 
 function updateAdvancedCharts() {
+    if (!dataLoadingComplete) return;
+    
     if (selectedCountries.size === 0) {
-        ['bubble', 'pie', 'radar', 'heatmap', 'sankey', 'gauge', 'area', 'treemap'].forEach(type => {
+        ['bubble', 'pie', 'radar', 'heatmap', 'sankey', 'area', 'treemap'].forEach(type => {
             if (charts[type]) charts[type].clear();
+        });
+        // Clear all gauge charts
+        Object.keys(charts).forEach(key => {
+            if (key.startsWith('gauge-')) {
+                charts[key].dispose();
+                delete charts[key];
+            }
         });
         return;
     }
@@ -433,7 +418,7 @@ function updateComparisonChart() {
         charts.comparison = echarts.init(chartDiv);
     }
 
-    const countries = Array.from(selectedCountries);
+    const countries = Array.from(selectedCountries).filter(code => COUNTRIES[code]);
     const data = countries.map(code => ({
         name: COUNTRIES[code].name,
         value: calculateTotalForCountry(code, currentFactorGroup),
@@ -542,15 +527,17 @@ function updateTradeflowChart() {
         charts.tradeflow = echarts.init(chartDiv);
     }
 
-    const countries = Array.from(selectedCountries);
-    const series = TRADE_FLOWS.map((flow, idx) => ({
+    const countries = Array.from(selectedCountries).filter(code => COUNTRIES[code]);
+    if (countries.length === 0) {
+        charts.tradeflow.clear();
+        return;
+    }
+
+    const series = TRADE_FLOWS.map(flow => ({
         name: flow.charAt(0).toUpperCase() + flow.slice(1),
         type: 'bar',
         stack: 'total',
-        data: countries.map(code => calculateTotalByFlow(code, currentFactorGroup, flow)),
-        itemStyle: {
-            color: ['#5470C6', '#91CC75', '#FAC858'][idx]
-        }
+        data: countries.map(code => calculateTotalByFlow(code, currentFactorGroup, flow))
     }));
 
     const option = {
@@ -558,7 +545,7 @@ function updateTradeflowChart() {
             trigger: 'axis',
             axisPointer: { type: 'shadow' },
             formatter: params => {
-                let result = `${params[0].axisValue}<br/>`;
+                let result = `<strong>${params[0].axisValue}</strong><br/>`;
                 params.forEach(p => {
                     result += `${p.marker} ${p.seriesName}: ${formatNumber(p.value)}<br/>`;
                 });
@@ -566,7 +553,7 @@ function updateTradeflowChart() {
             }
         },
         legend: {
-            data: ['Domestic', 'Exports', 'Imports']
+            data: TRADE_FLOWS.map(f => f.charAt(0).toUpperCase() + f.slice(1))
         },
         xAxis: {
             type: 'category',
@@ -589,7 +576,8 @@ function updateIndustryChart() {
         charts.industry = echarts.init(chartDiv);
     }
 
-    if (selectedCountries.size === 0) {
+    const countries = Array.from(selectedCountries).filter(code => COUNTRIES[code]);
+    if (countries.length === 0) {
         charts.industry.clear();
         return;
     }
@@ -597,7 +585,7 @@ function updateIndustryChart() {
     const allIndustries = new Set();
     const countriesData = {};
 
-    selectedCountries.forEach(code => {
+    countries.forEach(code => {
         const industryTotals = calculateByIndustry(code, currentFactorGroup);
         countriesData[code] = industryTotals;
         Object.keys(industryTotals).forEach(ind => allIndustries.add(ind));
@@ -607,7 +595,7 @@ function updateIndustryChart() {
     const industriesWithData = industries
         .map(ind => ({
             name: ind,
-            total: Array.from(selectedCountries).reduce((sum, code) => 
+            total: countries.reduce((sum, code) => 
                 sum + (countriesData[code][ind] || 0), 0)
         }))
         .filter(ind => ind.total > 0)
@@ -628,7 +616,7 @@ function updateIndustryChart() {
         return;
     }
 
-    const series = Array.from(selectedCountries).map(code => ({
+    const series = countries.map(code => ({
         name: COUNTRIES[code].name,
         type: 'bar',
         data: industries.map(ind => countriesData[code][ind] || 0),
@@ -648,14 +636,14 @@ function updateIndustryChart() {
             }
         },
         legend: {
-            data: Array.from(selectedCountries).map(code => COUNTRIES[code].name)
+            data: countries.map(code => COUNTRIES[code].name)
         },
         xAxis: {
             type: 'category',
             data: industries,
             axisLabel: {
-                rotate: 45,
                 interval: 0,
+                rotate: 45,
                 fontSize: 10
             }
         },
@@ -664,7 +652,6 @@ function updateIndustryChart() {
             name: 'Impact by Industry',
             axisLabel: { formatter: value => formatNumber(value) }
         },
-        series: series,
         grid: {
             bottom: 120,
             left: 60,
@@ -681,7 +668,7 @@ function updateBubbleChart() {
         charts.bubble = echarts.init(chartDiv);
     }
 
-    const data = Array.from(selectedCountries).map(code => {
+    const data = Array.from(selectedCountries).filter(code => COUNTRIES[code]).map(code => {
         const domestic = calculateTotalByFlow(code, currentFactorGroup, 'domestic');
         const exports = calculateTotalByFlow(code, currentFactorGroup, 'exports');
         const total = calculateTotalForCountry(code, currentFactorGroup);
@@ -814,6 +801,8 @@ function updatePieChart() {
 
     const data = [];
     selectedCountries.forEach(code => {
+        if (!COUNTRIES[code]) return;
+        
         TRADE_FLOWS.forEach(flow => {
             const value = calculateTotalByFlow(code, currentFactorGroup, flow);
             if (value > 0) {
@@ -909,53 +898,35 @@ function updateRadarChart() {
         charts.radar = echarts.init(chartDiv);
     }
 
+    const countries = Array.from(selectedCountries).filter(code => COUNTRIES[code]);
+    
     const indicator = ALL_FACTOR_GROUPS.map(group => ({
-        name: group.charAt(0).toUpperCase() + group.slice(1),
-        max: 0
+        name: group.toUpperCase(),
+        max: Math.max(...countries.map(code => calculateTotalForCountry(code, group) || 1))
     }));
 
-    const seriesData = [];
-    
-    selectedCountries.forEach(code => {
-        const values = ALL_FACTOR_GROUPS.map(group => 
-            calculateTotalForCountry(code, group)
-        );
-        
-        values.forEach((val, idx) => {
-            indicator[idx].max = Math.max(indicator[idx].max, val);
-        });
-        
-        seriesData.push({
+    const series = countries.map(code => ({
+        name: COUNTRIES[code].name,
+        type: 'radar',
+        data: [{
+            value: ALL_FACTOR_GROUPS.map(group => calculateTotalForCountry(code, group)),
             name: COUNTRIES[code].name,
-            value: values,
+            itemStyle: { color: COUNTRIES[code].color },
             areaStyle: { opacity: 0.3 }
-        });
-    });
-
-    indicator.forEach(ind => ind.max = ind.max * 1.1);
+        }]
+    }));
 
     const option = {
-        tooltip: {
-            trigger: 'item',
-            formatter: params => {
-                let result = `${params.name}<br/>`;
-                params.value.forEach((val, idx) => {
-                    result += `${indicator[idx].name}: ${formatNumber(val)}<br/>`;
-                });
-                return result;
-            }
-        },
+        tooltip: {},
         legend: {
-            data: Array.from(selectedCountries).map(code => COUNTRIES[code].name),
-            bottom: 0
+            data: countries.map(code => COUNTRIES[code].name)
         },
         radar: {
-            indicator: indicator
+            indicator: indicator,
+            shape: 'polygon',
+            splitNumber: 4
         },
-        series: [{
-            type: 'radar',
-            data: seriesData
-        }]
+        series: series
     };
 
     charts.radar.setOption(option, true);
@@ -967,13 +938,13 @@ function updateHeatmapChart() {
         charts.heatmap = echarts.init(chartDiv);
     }
 
-    const countries = Array.from(selectedCountries);
-    const data = [];
+    const countries = Array.from(selectedCountries).filter(code => COUNTRIES[code]);
     
-    countries.forEach((code, xIdx) => {
-        ALL_FACTOR_GROUPS.forEach((group, yIdx) => {
+    const data = [];
+    countries.forEach((code, i) => {
+        ALL_FACTOR_GROUPS.forEach((group, j) => {
             const value = calculateTotalForCountry(code, group);
-            data.push([xIdx, yIdx, value]);
+            data.push([j, i, value]);
         });
     });
 
@@ -981,24 +952,23 @@ function updateHeatmapChart() {
         tooltip: {
             position: 'top',
             formatter: params => {
-                const country = countries[params.value[0]];
-                const group = ALL_FACTOR_GROUPS[params.value[1]];
+                const country = countries[params.value[1]];
+                const group = ALL_FACTOR_GROUPS[params.value[0]];
                 return `${COUNTRIES[country].name}<br/>${group}: ${formatNumber(params.value[2])}`;
             }
         },
         grid: {
-            left: 100,
-            bottom: 60,
-            right: 40
+            height: '50%',
+            top: '10%'
         },
         xAxis: {
             type: 'category',
-            data: countries.map(code => COUNTRIES[code].name),
+            data: ALL_FACTOR_GROUPS.map(g => g.toUpperCase()),
             splitArea: { show: true }
         },
         yAxis: {
             type: 'category',
-            data: ALL_FACTOR_GROUPS.map(g => g.charAt(0).toUpperCase() + g.slice(1)),
+            data: countries.map(code => COUNTRIES[code].name),
             splitArea: { show: true }
         },
         visualMap: {
@@ -1007,17 +977,13 @@ function updateHeatmapChart() {
             calculable: true,
             orient: 'horizontal',
             left: 'center',
-            bottom: 0,
-            inRange: {
-                color: ['#e0f3f8', '#abd9e9', '#74add1', '#4575b4', '#313695']
-            }
+            bottom: '5%'
         },
         series: [{
             type: 'heatmap',
             data: data,
             label: {
-                show: true,
-                formatter: params => formatNumber(params.value[2])
+                show: false
             },
             emphasis: {
                 itemStyle: {
@@ -1041,17 +1007,20 @@ function updateSankeyChart() {
     const links = [];
     
     selectedCountries.forEach(code => {
-        const countryName = COUNTRIES[code].name;
-        nodes.push({ name: countryName });
+        if (!COUNTRIES[code]) return;
+        
+        nodes.push({ name: COUNTRIES[code].name });
         
         TRADE_FLOWS.forEach(flow => {
-            const flowName = `${countryName}-${flow}`;
-            nodes.push({ name: flowName });
+            const flowName = `${flow.charAt(0).toUpperCase() + flow.slice(1)}`;
+            if (!nodes.find(n => n.name === flowName)) {
+                nodes.push({ name: flowName });
+            }
             
             const value = calculateTotalByFlow(code, currentFactorGroup, flow);
             if (value > 0) {
                 links.push({
-                    source: countryName,
+                    source: COUNTRIES[code].name,
                     target: flowName,
                     value: value
                 });
@@ -1062,21 +1031,21 @@ function updateSankeyChart() {
     const option = {
         tooltip: {
             trigger: 'item',
+            triggerOn: 'mousemove',
             formatter: params => {
                 if (params.dataType === 'edge') {
-                    return `${params.data.source} → ${params.data.target}<br/>Impact: ${formatNumber(params.value)}`;
+                    return `${params.data.source} → ${params.data.target}<br/>${formatNumber(params.value)}`;
                 }
                 return params.name;
             }
         },
         series: [{
             type: 'sankey',
-            layout: 'none',
+            data: nodes,
+            links: links,
             emphasis: {
                 focus: 'adjacency'
             },
-            data: nodes,
-            links: links,
             lineStyle: {
                 color: 'gradient',
                 curveness: 0.5
@@ -1103,6 +1072,8 @@ function updateGaugeChart() {
     const maxTotal = Math.max(...allTotals.filter(t => t > 0));
     
     selectedCountries.forEach(code => {
+        if (!COUNTRIES[code]) return;
+        
         const gaugeDiv = document.createElement('div');
         gaugeDiv.className = 'gauge-item';
         gaugeDiv.innerHTML = `
@@ -1214,9 +1185,9 @@ function updateAreaChart() {
         charts.area = echarts.init(chartDiv);
     }
 
-    const countries = Array.from(selectedCountries);
+    const countries = Array.from(selectedCountries).filter(code => COUNTRIES[code]);
     
-    const series = TRADE_FLOWS.map((flow, idx) => ({
+    const series = TRADE_FLOWS.map(flow => ({
         name: flow.charAt(0).toUpperCase() + flow.slice(1),
         type: 'line',
         stack: 'Total',
@@ -1224,27 +1195,21 @@ function updateAreaChart() {
         emphasis: {
             focus: 'series'
         },
-        data: countries.map(code => calculateTotalByFlow(code, currentFactorGroup, flow)),
-        smooth: true
+        data: countries.map(code => calculateTotalByFlow(code, currentFactorGroup, flow))
     }));
 
     const option = {
         tooltip: {
             trigger: 'axis',
             axisPointer: {
-                type: 'cross'
-            },
-            formatter: params => {
-                let result = `${params[0].axisValue}<br/>`;
-                params.forEach(p => {
-                    result += `${p.marker} ${p.seriesName}: ${formatNumber(p.value)}<br/>`;
-                });
-                return result;
+                type: 'cross',
+                label: {
+                    backgroundColor: '#6a7985'
+                }
             }
         },
         legend: {
-            data: ['Domestic', 'Exports', 'Imports'],
-            bottom: 0
+            data: TRADE_FLOWS.map(f => f.charAt(0).toUpperCase() + f.slice(1))
         },
         xAxis: {
             type: 'category',
@@ -1270,6 +1235,8 @@ function updateTreemapChart() {
     const data = [];
     
     selectedCountries.forEach(code => {
+        if (!COUNTRIES[code]) return;
+        
         const country = COUNTRIES[code];
         const children = TRADE_FLOWS.map(flow => ({
             name: flow,
@@ -1373,6 +1340,7 @@ function updateInsights() {
     const totals = [];
 
     selectedCountries.forEach(code => {
+        if (!COUNTRIES[code]) return;
         const total = calculateTotalForCountry(code, currentFactorGroup);
         totals.push({ code, total });
     });
@@ -1389,6 +1357,8 @@ function updateInsights() {
     }
 
     selectedCountries.forEach(code => {
+        if (!COUNTRIES[code]) return;
+        
         const domestic = calculateTotalByFlow(code, currentFactorGroup, 'domestic');
         const exports = calculateTotalByFlow(code, currentFactorGroup, 'exports');
         const imports = calculateTotalByFlow(code, currentFactorGroup, 'imports');
@@ -1426,7 +1396,7 @@ async function loadCSV(path) {
             skipEmptyLines: true,
             complete: results => {
                 if (results.data && results.data.length > 0) {
-                    debugLog(`✓ Loaded ${path}: ${results.data.length} rows, columns: ${Object.keys(results.data[0]).join(', ')}`);
+                    debugLog(`✓ Loaded ${path}: ${results.data.length} rows`);
                     resolve(results.data);
                 } else {
                     debugLog(`⚠ ${path}: File empty or no data`, true);
@@ -1479,18 +1449,9 @@ async function loadAllData() {
     debugLog(`Industry lookup: ${Object.keys(industryLookup).length} entries`);
     debugLog(`Factor lookup: ${Object.keys(factorLookup).length} entries`);
     
-    const groupCounts = {};
-    Object.values(factorLookup).forEach(f => {
-        groupCounts[f.group] = (groupCounts[f.group] || 0) + 1;
-    });
-    debugLog(`Factor groups: ${JSON.stringify(groupCounts)}`);
-    
-    if (Object.keys(factorLookup).length === 0) {
-        showStatus('⚠ Warning: factor.csv not loaded correctly.', true);
-    }
-    
     debugLog('=== LOADING COUNTRY TRADE DATA ===');
     
+    // ONLY LOAD VERIFIED COUNTRIES - NO LOOP THROUGH NON-EXISTENT DATA
     for (const code of Object.keys(COUNTRIES)) {
         debugLog(`--- Loading ${COUNTRIES[code].name} (${code}) ---`);
         showStatus(`Loading data for ${COUNTRIES[code].name}...`);
@@ -1519,7 +1480,6 @@ async function loadAllData() {
             
             if (tradeFactorData.length > 0) {
                 debugLog(`    trade_factor: ${tradeFactorData.length} rows`);
-                debugLog(`    Sample row: ${JSON.stringify(tradeFactorData[0])}`);
             }
         }
     }
@@ -1542,28 +1502,35 @@ window.addEventListener('DOMContentLoaded', () => {
     debugLog('Page loaded, initializing...');
     
     const toggleBtn = document.getElementById('toggle-debug');
-    toggleBtn.addEventListener('click', () => {
-        const logDiv = document.getElementById('debug-log');
-        if (logDiv.style.display === 'none') {
-            logDiv.style.display = 'block';
-            toggleBtn.textContent = 'Hide';
-        } else {
-            logDiv.style.display = 'none';
-            toggleBtn.textContent = 'Show';
-        }
-    });
+    if (toggleBtn) {
+        toggleBtn.addEventListener('click', () => {
+            const logDiv = document.getElementById('debug-log');
+            if (logDiv.style.display === 'none') {
+                logDiv.style.display = 'block';
+                toggleBtn.textContent = 'Hide';
+            } else {
+                logDiv.style.display = 'none';
+                toggleBtn.textContent = 'Show';
+            }
+        });
+    }
     
     initMap();
     
-    document.getElementById('factor-group').addEventListener('change', (e) => {
-        currentFactorGroup = e.target.value;
-        debugLog(`Factor group changed to: ${currentFactorGroup}`);
-        updateUI();
-    });
+    const factorSelect = document.getElementById('factor-group');
+    if (factorSelect) {
+        factorSelect.addEventListener('change', (e) => {
+            currentFactorGroup = e.target.value;
+            debugLog(`Factor group changed to: ${currentFactorGroup}`);
+            updateUI();
+        });
+    }
     
     window.addEventListener('resize', () => {
         Object.values(charts).forEach(chart => {
-            if (chart && chart.resize) chart.resize();
+            if (chart && typeof chart.resize === 'function') {
+                chart.resize();
+            }
         });
     });
     
