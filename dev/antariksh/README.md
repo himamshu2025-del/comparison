@@ -12,7 +12,7 @@ Create a dashboard that pulls **real EXIOBASE tradeflow CSV data** from GitHub f
 
 ### Prompt Used
 
-
+## Prompt 1
 I need you to create a data visualization dashboard with 3 files (index.html, script.js, styles.css) that displays international trade and environmental impact data.
 1.Requirements:
 
@@ -67,17 +67,34 @@ No fake data - handle missing files gracefully with console warnings
 Output the complete code for all 3 files in one response.
 
 
+
+
+
+## Prompt 2:
+
+till now we were including only 3 countries, i want you to now include all the countries from the dataset. I also want you to understand and make the page look aesthetically pleasing, right now if we load the page it shows empty placeholders untill we select any country, instead of that keep USA selected by default so that the placeholders will not look empty and the page will look better.
+
+# Follow up:
+this is impressive, however if we select more than one country the impact gauge meter still goes out of the placeholder. also in the left section where we can choose the country instead of initials, i want you to add country flags next to country name
+
+
+
+
 ## What this experiment achieved
 - Claude generated `index.html`, `script.js`, and `styles.css` in one response as requested.
 - Dashboard UI renders with map, cards, dropdown, charts, and insights panel.
 - Real CSV loading logic was implemented (no static placeholder arrays).
 - Debug console panel currently prints which CSVs load successfully vs missing.
+- Currently it generates creative visualizations and has more comparision charts.
+- It seems that claude misunderstood and has added countries which are not present in the Dataset.
 
 ## Next Goal 
 - Enhance the data representaion
 - Add better visualizations
+- Train Claude to only select countries from the dataset.
+- add country flags.
+- Add a storyline feature.
 
 ## Notes for collaborators
 - GitHub RAW CSV links were used intentionally so the app can run directly from the browser without needing local dataset folders.
-- Only **3 countries** (US, IN, RU) were used in this prototype to keep testing fast and visual. Full expansion to all countries will happen once dataset structure is confirmed.
 - Debug logging is currently visible on purpose — it will be hidden later once data reliability is stable.

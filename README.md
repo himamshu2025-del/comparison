@@ -19,5 +19,5 @@ We're not using the scripts external that are external to tradeflow folder.
 
 [github.com/ModelEarth/exiobase/tree/main/tradeflow](https://github.com/ModelEarth/exiobase/tree/main/tradeflow)
 
-# Progress (11/20/2025)
+# Progress (11/24/2025)
 https://patilantariksh.github.io/comparison/dev/antariksh/
