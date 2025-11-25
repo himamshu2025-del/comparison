@@ -75,10 +75,21 @@ Output the complete code for all 3 files in one response.
 till now we were including only 3 countries, i want you to now include all the countries from the dataset. I also want you to understand and make the page look aesthetically pleasing, right now if we load the page it shows empty placeholders untill we select any country, instead of that keep USA selected by default so that the placeholders will not look empty and the page will look better.
 
 # Follow up:
-this is impressive, however if we select more than one country the impact gauge meter still goes out of the placeholder. also in the left section where we can choose the country instead of initials, i want you to add country flags next to country name
+This is impressive, however if we select more than one country the impact gauge meter still goes out of the placeholder. also in the left section where we can choose the country instead of initials, i want you to add country flags next to country name.
 
 
 
+
+## Prompt 3:
+
+I want you to thoroughly analyze the trade-data data set and only keep those countries who's data we have in the data set. In the current version you have added countries which do not exist in our dataset. refer this link 
+
+https://github.com/ModelEarth/trade-data/tree/main/year/2019
+
+also, be cautious because the current version has a runaway loop that overwhelms by browser's use of the CPU. i want a clean code
+
+# Follow up: 
+Claude gave me only 3 countries again so added a screendump of the dataset repo explaining we have data for 14 countries available. 
 
 ## What this experiment achieved
 - Claude generated `index.html`, `script.js`, and `styles.css` in one response as requested.
