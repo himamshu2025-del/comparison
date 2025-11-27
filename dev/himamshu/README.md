@@ -1,18 +1,13 @@
-# Himamshu – ModelEarth Tradeflow Frontend
+# TradeFlow Data Frontend - UN Goal Focus
 
-This folder contains the front-end prototype for visualizing international tradeflow data with a UN Sustainable Development Goal (SDG) focus.
+Welcome to the **TradeFlow Data Frontend** developed by Himamshu for ModelEarth. This project visualizes trade data with a focus on **United Nations Sustainable Development Goals (SDGs)**. The goal is to provide clear, interactive, and insightful views of trade flows across countries and years.
 
-## 🎯 Project Vibe Prompt
+## Vibe Prompt
+This project is designed to:
+- Visualize trade patterns and flows per country and year.
+- Highlight connections to UN SDGs, particularly those related to sustainable production, responsible consumption, and global trade fairness.
+- Generate actionable insights for each country and globally, including at least 10 general insights and 10 per country.
+- Provide intuitive charts and graphs to compare trade flows.
+- Serve as a frontend interface for the `comparison` repo, connecting to `tradeflow/[year]/[country]` data.
 
-> Build interactive comparison dashboards of trade flows across countries and years. Focus on insights related to UN Goals such as responsible consumption, energy, climate action, and economic growth. Use clean visualizations to highlight disparities and patterns. Integrate tradeflow/[year]/[country] data in a way that supports cross-country comparison and trend analysis.
-
-## 📂 File Structure
-
-
-## 📝 Notes
-
-- The project uses **ModelEarth tradeflow data** stored under `tradeflow/[year]/[country]`.  
-- Columns may include: `export_value`, `import_value`, `sector`, `UN_Goal`, `country`, `year`.  
-- This prototype demonstrates how these datasets could be visualized and compared.  
-- A `.md` overview page can be generated for the “comparison” repo to map out column usage and file names programmatically using Claude Code CLI.
-
+## Folder Structure
