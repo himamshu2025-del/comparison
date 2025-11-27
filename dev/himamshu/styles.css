@@ -54,10 +54,17 @@ select {
   border-radius: 10px;
   box-shadow: 0 3px 12px rgba(0,0,0,0.1);
   transition: transform 0.2s;
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
 }
 
-.country-card:hover {
-  transform: scale(1.02);
+.country-card:hover { transform: scale(1.02); }
+
+.country-flag {
+  width: 60px;
+  height: auto;
+  border-radius: 5px;
 }
 
 #charts {
@@ -75,3 +82,4 @@ footer {
   padding: 15px 0;
   margin-top: 40px;
 }
+
