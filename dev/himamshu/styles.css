@@ -1,0 +1,59 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #f3f4f6;
+  color: #333;
+}
+
+header {
+  background: #2c7a7b;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+}
+
+header h1 {
+  margin-bottom: 5px;
+}
+
+main {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 0 20px;
+}
+
+h2 {
+  margin-top: 40px;
+  margin-bottom: 15px;
+  color: #2c7a7b;
+}
+
+#global-insights ul,
+.country-card ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.country-card {
+  background: white;
+  padding: 15px;
+  margin: 15px 0;
+  border-radius: 8px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+}
+
+#charts {
+  margin-top: 40px;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+}
+
+footer {
+  background: #2c7a7b;
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+  margin-top: 40px;
+}
