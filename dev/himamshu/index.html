@@ -10,22 +10,27 @@
 <body>
   <header>
     <h1>TradeFlow Dashboard</h1>
-    <p>Insights into global sustainable trade and biodiversity-based products</p>
+    <p>Interactive insights on global sustainable trade and biodiversity-based products</p>
   </header>
 
   <main>
     <section id="global-insights">
       <h2>🌍 Global Insights</h2>
+      <button id="generate-global">Generate Global Insights</button>
       <ul id="global-list"></ul>
     </section>
 
     <section id="country-insights">
       <h2>🏳️ Country Insights</h2>
-      <div id="countries-container"></div>
+      <label for="country-select">Select a country:</label>
+      <select id="country-select">
+        <option value="">--Choose a country--</option>
+      </select>
+      <div id="country-container"></div>
     </section>
 
     <section id="charts">
-      <h2>📊 Trade Flow Charts</h2>
+      <h2>📊 Biodiversity-Based Export Chart 2022</h2>
       <canvas id="tradeChart" width="900" height="400"></canvas>
     </section>
   </main>
