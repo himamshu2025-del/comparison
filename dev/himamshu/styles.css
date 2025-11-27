@@ -12,9 +12,7 @@ header {
   padding: 20px 0;
 }
 
-header h1 {
-  margin-bottom: 5px;
-}
+header h1 { margin-bottom: 5px; }
 
 main {
   max-width: 1200px;
@@ -22,32 +20,52 @@ main {
   padding: 0 20px;
 }
 
-h2 {
-  margin-top: 40px;
-  margin-bottom: 15px;
-  color: #2c7a7b;
+h2 { margin-top: 40px; margin-bottom: 15px; color: #2c7a7b; }
+
+button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  margin: 10px 0;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
 }
 
-#global-insights ul,
-.country-card ul {
+button:hover { background-color: #45a049; }
+
+select {
+  padding: 8px;
+  margin: 10px 0;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+#global-list, .country-card ul {
   list-style-type: disc;
   padding-left: 20px;
 }
 
 .country-card {
   background: white;
-  padding: 15px;
+  padding: 20px;
   margin: 15px 0;
-  border-radius: 8px;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+  border-radius: 10px;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+}
+
+.country-card:hover {
+  transform: scale(1.02);
 }
 
 #charts {
   margin-top: 40px;
   background: white;
   padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+  border-radius: 10px;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.1);
 }
 
 footer {
