@@ -16,5 +16,11 @@ Germany, USA, China, India, Netherlands, France, Norway, Switzerland, UK, Brazil
 
 ## Folder Structure
 
+## How It Works
+
+1. Preprocessed UN data is embedded in `script.js`.  
+2. Users can **click buttons or select countries** to display insights.  
+3. Charts show **biodiversity-based export values** for all included countries.  
+4. Fully interactive and mobile-friendly dashboard for visualizing sustainable trade data.
 
 
