@@ -7,21 +7,14 @@ This interactive dashboard by **Himamshu Aluru** for **ModelEarth** provides ins
 - **Generate 10 Global Insights** with a click of a button.
 - **Select a country** to see 10 country-specific insights.
 - **Interactive charts** showing biodiversity-based export values.
+- **Country icons and images** for visual guidance.
 - **Polished UI** with responsive cards, buttons, and dropdown selectors.
 
-## Country Snapshots
+## Countries Included
 
-Countries included:
-
-- Germany, USA, China, India, Netherlands, France, Norway, Switzerland, UK, Brazil
-
-Insights include:
-
-- Key sustainable trade practices
-- Biodiversity-based trade values
-- Voluntary sustainability standards (VSS)
-- Due-diligence and compliance initiatives
-- Digital traceability and capacity-building efforts
+Germany, USA, China, India, Netherlands, France, Norway, Switzerland, UK, Brazil
 
 ## Folder Structure
+
+
 
