@@ -1,123 +1,202 @@
+/* -------------------------------
+   Biodiversity-Based Trade Chart
+-------------------------------- */
+const ctx = document.getElementById('tradeChart');
+
+new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: [
+            'United States',
+            'China',
+            'Germany',
+            'Netherlands',
+            'France',
+            'India',
+            'Brazil'
+        ],
+        datasets: [{
+            label: 'Biodiversity-based exports (USD Billions)',
+            data: [332.9, 318.41, 210.0, 181.6, 160.4, 109.3, 102.2],
+            backgroundColor: [
+                '#3e95cd', '#8e5ea2', '#3cba9f',
+                '#e8c3b9', '#c45850', '#4bc0c0', '#ffa600'
+            ]
+        }]
+    },
+    options: {
+        plugins: {
+            tooltip: { enabled: true }
+        },
+        scales: {
+            y: {
+                beginAtZero: true,
+                ticks: {
+                    callback: value => value + "B USD"
+                }
+            }
+        }
+    }
+});
+
+/* --------------------------------------
+   Country-Specific Sustainable Insights
+--------------------------------------- */
+
 const countryInsights = {
     USA: [
-        "The U.S. leads renewable energy technology exports, valued at $72B in 2024.",
-        "Sustainable agriculture products increased 34% YoY, driven by global demand.",
-        "The U.S. cut carbon-intensive imports by 12% through green-tariff reforms.",
-        "EV component exports to Europe rose 41% after new bilateral trade programs.",
-        "50+ U.S. corporations have adopted UN SDG 12 reporting in all supply chains.",
-        "California accounts for 18% of U.S. clean-tech export volume.",
-        "Eco-certified textile exports rose 9%, supported by traceability efforts.",
-        "Biodegradable packaging exports grew to $19.6B — a global record.",
-        "Methane-reduction trade partnerships expanded to 24 countries in 2025.",
-        "The Inflation Reduction Act boosted green-manufacturing trade jobs by 210K."
+        "Leads global biodiversity-based exports at USD 332.9B in 2022.",
+        "Growing consumer demand for sustainable and ethically sourced goods.",
+        "Major companies implement ESG and sustainability reporting in supply chains.",
+        "Investments in traceability technology for agriculture and manufacturing.",
+        "High compliance requirements related to forced-labor and transparency.",
+        "Strong role in development of sustainability-focused trade agreements.",
+        "Retailers increasingly require sustainability certifications from suppliers.",
+        "High import standards push exporters globally toward sustainability upgrades.",
+        "Government subsidies support renewable and sustainable production sectors.",
+        "Biodiversity-based products contribute significantly to US green economy growth."
     ],
     China: [
-        "China produces 75% of the world’s solar panels and exports to 150+ nations.",
-        "Green logistics corridors reduced emissions by 19% on main shipping routes.",
-        "Sustainable trade financing reached $44B to incentivize eco-friendly exporters.",
-        "Bamboo-based biodegradable materials exports rose 52% YoY.",
-        "China increased compliance with circular-economy regulations for exports.",
-        "Electric bus exports tripled due to African and Latin-American adoption.",
-        "Green Belt & Road trade projects added 3.2M jobs worldwide.",
-        "China recycles 95% of lithium batteries used in exported EVs.",
-        "CO₂-adjusted trade pricing now covers 62% of China’s export contracts.",
-        "Smart-port automation cut cargo emissions by 28% across mega-ports."
-    ],
-    India: [
-        "India became the world’s top exporter of organic cotton in 2024.",
-        "Solar module exports grew 39% with demand from Europe and MENA.",
-        "India doubled its fair-trade certified producer cooperatives.",
-        "Green hydrogen trade partnerships formed with Japan, UAE and Germany.",
-        "Eco-friendly ayurvedic product exports hit $6B globally.",
-        "Plastic-alternative jute exports surged 71% YoY.",
-        "India reduced deforestation-linked exports via digital land-use monitoring.",
-        "Sustainable aquaculture exports expanded 33% with UN traceability.",
-        "EV battery manufacturing exports reached $9.3B in 2025.",
-        "India is building 40 sustainable shipping hubs powered by renewables."
-    ],
-    Brazil: [
-        "Brazil achieved 78% traceability in beef exports — highest ever recorded.",
-        "Forest-positive soy exports reached $18B with zero-deforestation compliance.",
-        "Brazil became the largest exporter of sustainable aviation fuel feedstock.",
-        "Agro-solar farms improved crop productivity and export revenue by 23%.",
-        "Eco-tourism now represents 12% of Brazil’s service-export sector.",
-        "Native-tree reforestation linked to export permits restored 116M hectares.",
-        "Rainforest-certified coffee exports grew 46% YoY.",
-        "Bio-plastics from sugarcane exports reached 6.1M tons annually.",
-        "Wind-energy equipment exports increased 34% YoY.",
-        "Amazon green-bond trading funded 1,200+ clean-supply-chain startups."
+        "Ranked 2nd globally in biodiversity-based exports at USD 318.41B in 2022.",
+        "Rapid growth in sustainable agriculture and forestry initiatives.",
+        "Adoption of traceability systems driven by demand from European and US buyers.",
+        "Green manufacturing reforms reduce water and carbon footprints in exports.",
+        "Expansion of policies for sustainability within value-chain sectors.",
+        "Large renewable energy production supports sustainable trade transitions.",
+        "Growing participation in voluntary sustainability certifications for export access.",
+        "Digital supply-chain tracking used across textile, leather, and electronics.",
+        "Strong government support for circular-economy business models.",
+        "Eco-friendly production increasingly a driver of global competitiveness."
     ],
     Germany: [
-        "Germany leads clean industrial machinery exports worth $108B annually.",
-        "Hydrogen fuel-cell technology exports expanded 57% across Asia.",
-        "Waste-to-energy trade avoided 13M tons of landfill emissions.",
-        "Circular manufacturing partnerships lowered CO₂ by 29%.",
-        "Eco-certified mechanical engineering exports hit a global high.",
-        "Organic food exports rose 44% across the EU and Middle East.",
-        "Germany invested $21B in sustainable-trade infrastructure abroad.",
-        "Carbon-label transparency applies to 96% of export products.",
-        "Sustainable freight corridors increased efficiency by 31%.",
-        "Green steel production enabled new low-emissions trade deals."
+        "Supply Chain Due Diligence Act legally requires sustainability risk management.",
+        "Among top exporters of biodiversity-based products in the world.",
+        "Sustainability reporting mandatory for large corporations across value chains.",
+        "High demand for certified sustainable forestry and agricultural imports.",
+        "Green consumption trends shape import/export conditions.",
+        "Carbon-neutral logistics emerging across German ports and transport.",
+        "Government investment in climate innovation to support greener exports.",
+        "Industry partnerships promote fair labor and biodiversity protection.",
+        "Wide adoption of renewable energy in manufacturing supply chains.",
+        "Major player in global transition toward mandatory sustainable trade compliance."
     ],
     Netherlands: [
-        "The Netherlands is the world’s largest exporter of circular-economy plastics.",
-        "Amsterdam port reduced maritime emissions 33% using smart routing systems.",
-        "Plant-based food exports surged 69% YoY due to EU sustainable shift.",
-        "Water-efficient greenhouse solutions are now exported to 55+ countries.",
-        "Dutch bio-chemicals exports reached $27B in 2025.",
-        "Netherlands pioneered blockchain-trade traceability for agri-products.",
-        "Sustainable seafood trade is certified at 88%, highest in the EU.",
-        "Electric shipping fleets now handle 22% of domestic container exports.",
-        "Netherlands co-finances UN SDG trade accelerator for developing economies.",
-        "Recycled textile exports grew 48% thanks to domestic clothing-return programs."
+        "Integrates sustainability enforcement into national trade policy frameworks.",
+        "Large share of world biodiversity-based exports via global ports (Rotterdam).",
+        "A global hub for sustainable agricultural and horticultural goods.",
+        "Digital traceability programs adopted across food value chains.",
+        "Government incentives support sustainability certification for exporters.",
+        "Businesses rapidly adopting ESG in supply-chain risk management.",
+        "Supports developing nations to meet sustainability standards in trade.",
+        "Key advocate for sustainability clauses in EU trade agreements.",
+        "Strong consumer preference for eco-labeled imported products.",
+        "Gateway role forces continuous investment in low-carbon port logistics."
     ],
     France: [
-        "France leads sustainable luxury goods exports with full supply-chain traceability.",
-        "Organic wine exports reached $10.2B, highest globally.",
-        "France reduced carbon-intensive imports through green border adjustment taxes.",
-        "Hydrogen-powered aviation technology exports rose 37%.",
-        "Eco-certified dairy exports grew 32% with Middle East demand.",
-        "France expanded eco-design regulations to all export packaging.",
-        "Sustainable cosmetics reached $29B in export value.",
-        "Digital carbon-reporting now applies to 90% of export contracts.",
-        "France supports 41 developing nations through SDG-aligned trade programs.",
-        "Wind-turbine component exports rose 44% in 2025."
+        "Corporate Duty of Vigilance Law requires mandatory due-diligence reporting.",
+        "Major contributor to European biodiversity-based trade flows.",
+        "High demand for fair-trade and eco-certification in import markets.",
+        "Investment in sustainable agriculture and low-emission production sectors.",
+        "Carbon reporting and supply-chain transparency enforced for large firms.",
+        "Active use of social and environmental indicators for trade decisions.",
+        "Growing innovation in climate-friendly logistics infrastructure.",
+        "Leading exporter of sustainable wine, cosmetics, and agricultural goods.",
+        "Policies extend sustainability obligations to global suppliers.",
+        "Supports international financing to help developing-country exporters comply."
     ],
     Norway: [
-        "Norway is the #1 exporter of sustainable seafood with 96% traceability.",
-        "Green shipping fuels exports (ammonia & hydrogen) reached $12B in 2024.",
-        "Offshore wind equipment exports grew 58% YoY.",
-        "Norway charges low-carbon freight incentives for global shipping partners.",
-        "Circular battery materials exports replaced 41% of mining-dependent trade.",
-        "Smart-aquaculture automation reduced trade-linked emissions 26%.",
-        "Norway finances UN climate-positive trade development for island nations.",
-        "Eco-labelled aluminum exports climbed 72% YoY.",
-        "Maritime AI-navigation tech is now exported to 90+ countries.",
-        "Nature-positive ocean-economy trade added 60K new jobs."
+        "Transparency Act requires supply-chain due diligence for human rights.",
+        "Sustainability integrated heavily into import regulations and procurement.",
+        "High sustainability standards in seafood and forestry exports.",
+        "Monitoring systems ensure compliance with global certification requirements.",
+        "Government investments encourage sustainable maritime and logistics systems.",
+        "Public reporting obligations ensure traceability for global supply partners.",
+        "Strong adoption of circular-economy principles across industries.",
+        "International cooperation to build sustainable supply chains with partners.",
+        "Consumer preference strongly favors certified sustainable imports.",
+        "Plays leading role in sustainability-focused European trade strategies."
     ],
     Switzerland: [
-        "Switzerland leads sustainable finance exports with $3.1T in ESG-aligned assets.",
-        "Carbon-neutral pharmaceutical exports grew 23% YoY.",
-        "Precision-manufacturing exports now require full supply-chain transparency.",
-        "Swiss watch industry reduced emissions 42% through sustainable materials.",
-        "Hydropower-equipment exports increased 38%.",
-        "Switzerland is a global hub for UN SDG-based trade certification.",
-        "Sustainable chocolate exports rose with zero-deforestation cocoa sourcing.",
-        "Bio-medical manufacturing exports now use fully recyclable packaging.",
-        "Switzerland negotiates climate-positive trade deals with 32 nations.",
-        "AI-based carbon-verification services became a major service-export sector."
+        "Mandatory ESG reporting for large companies per 2022 legal framework.",
+        "Strong focus on ethical sourcing in pharmaceuticals, metals & food imports.",
+        "Financial industry supports global sustainable-trade investments.",
+        "Certification systems widely adopted for agricultural and luxury goods.",
+        "High traceability standards for high-value natural-resource imports.",
+        "Policies reinforce human-rights protection in international trade.",
+        "Participation in global supply-chain transparency initiatives.",
+        "Partnerships support sustainable trade capacity in developing nations.",
+        "Focus on biodiversity-conserving sourcing for global supply chains.",
+        "Consumers drive demand for clean, transparent supply chains."
     ],
     UK: [
-        "The UK is Europe’s leading exporter of offshore wind technology.",
-        "Sustainable fashion exports grew 54% due to circular-design mandates.",
-        "The UK eliminated coal-linked imports from state-procurement supply chains.",
-        "Low-carbon steel exports reached $7.8B in 2025.",
-        "Sustainable fintech services expanded to 65 countries.",
-        "Organic agriculture exports rose 28% with strong demand from East Asia.",
-        "Digital product-passport requirements now cover most consumer exports.",
-        "Shipping-decarbonization partnerships reduced emissions 31%.",
-        "University-industry green-innovation exports reached $12B.",
-        "UK operates the largest SDG-aligned trade training network in the Commonwealth."
+        "Modern Slavery Act requires mandatory transparency in supply chains.",
+        "Supports business transition toward full ESG and sustainability reporting.",
+        "Large importer with tightening sustainability requirements for exporters.",
+        "Growing marketplace for eco-labeled and fair-trade certified imports.",
+        "Government promotes sustainable logistics and carbon-neutral shipping.",
+        "Retailers impose sustainability standards on overseas suppliers.",
+        "Strong trade-policy alignment with climate and biodiversity commitments.",
+        "Circular-economy innovation encouraged across industries and ports.",
+        "Partnering with developing countries for sustainable supply capacity.",
+        "Sustainability increasingly decisive for export market access."
+    ],
+    India: [
+        "Among top biodiversity-based exporters globally (3.2% of world share).",
+        "Export sectors increasingly rely on sustainability certifications.",
+        "Digital traceability emerging in textiles, spices, and agricultural trade.",
+        "Growing demand from EU/US markets pushing exporters to upgrade standards.",
+        "Free Trade Agreements include sustainability chapters and obligations.",
+        "Government support programs help MSMEs meet global sustainability rules.",
+        "Green production technologies adopted in renewable and bio-resources sectors.",
+        "Focus on forest-based livelihood products and fair benefit-sharing.",
+        "Eco-tourism and handicrafts contribute to sustainable-trade diversification.",
+        "Challenges remain with cost and complexity of compliance for small producers."
+    ],
+    Brazil: [
+        "Among top global exporters of biodiversity-based goods.",
+        "High demand for sustainability in soy, timber and agricultural trade flows.",
+        "New traceability infrastructure developed for forestry and livestock.",
+        "Pressure from importing markets drives sustainability upgrades.",
+        "Large-scale protection of biodiversity linked to trade competitiveness.",
+        "Expansion of green-logistics initiatives in major export ports.",
+        "Increased participation in certification programs for agriculture.",
+        "Indigenous and rural communities supported in sustainable supply chains.",
+        "Government and private sector promoting climate-aligned production.",
+        "Sustainability now linked to economic opportunity in international markets."
     ]
 };
 
+/* -------------------------------
+    Populate Country Dropdown
+-------------------------------- */
+const select = document.getElementById("countrySelect");
+Object.keys(countryInsights).forEach(country => {
+    const option = document.createElement("option");
+    option.value = country;
+    option.textContent = country;
+    select.appendChild(option);
+});
+
+/* -------------------------------
+      Display Country Insights
+-------------------------------- */
+function displayInsights(country) {
+    const container = document.getElementById("insightsContainer");
+    container.innerHTML = "";
+
+    if (!country || !countryInsights[country]) return;
+
+    countryInsights[country].forEach((item, index) => {
+        const div = document.createElement("div");
+        div.className = "insight-box";
+        div.innerHTML = `<strong>Insight ${index + 1}:</strong> ${item}`;
+        container.appendChild(div);
+    });
+}
+
+/* -------------------------------
+   On Country Selection Change
+-------------------------------- */
+select.addEventListener("change", e => {
+    displayInsights(e.target.value);
+});
