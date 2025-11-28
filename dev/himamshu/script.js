@@ -1,83 +1,136 @@
-// Each country now has 10 UNIQUE insights
-const countryInsights = {
-    USA: [
-        "The U.S. leads renewable energy technology exports, valued at $72B in 2024.",
-        "Sustainable agriculture products increased 34% YoY, driven by global demand.",
-        "The U.S. cut carbon-intensive imports by 12% through green-tariff reforms.",
-        "EV component exports to Europe rose 41% after new bilateral trade programs.",
-        "50+ U.S. corporations have adopted UN SDG 12 reporting in all supply chains.",
-        "California alone accounts for 18% of U.S. clean-tech export volume.",
-        "Eco-certified textile exports rose 9%, supported by traceability efforts.",
-        "Biodegradable packaging exports grew to $19.6B — a global record.",
-        "Methane-reduction trade partnerships expanded to 24 countries in 2025.",
-        "The Inflation Reduction Act boosted green-manufacturing trade jobs by 210K."
-    ],
-    China: [
-        "China now produces 75% of the world’s solar panels and exports to 150+ nations.",
-        "Green logistics corridors reduced emissions by 19% on main shipping routes.",
-        "Sustainable trade financing reached $44B to incentivize eco-friendly exporters.",
-        "Bamboo-based biodegradable materials exports rose 52% YoY.",
-        "China increased compliance with circular-economy regulations for exports.",
-        "Electric bus exports tripled due to African and Latin-American adoption.",
-        "Green Belt & Road trade projects added 3.2M jobs worldwide.",
-        "China recycles 95% of lithium batteries used in exported EVs.",
-        "CO₂-adjusted trade pricing now covers 62% of Chinese international contracts.",
-        "Smart-port automation cut cargo emissions by 28% across seven mega-ports."
-    ],
-    India: [
-        "India became the world’s top exporter of organic cotton in 2024.",
-        "Solar module exports grew 39% with strong demand from Europe and MENA.",
-        "India doubled its fair-trade certified producer cooperatives.",
-        "Green hydrogen trade partnerships formed with Japan, UAE and Germany.",
-        "Eco-friendly ayurvedic product exports hit $6B, driven by natural wellness markets.",
-        "Plastic-alternative jute exports surged by 71% globally.",
-        "India reduced deforestation-linked exports via digital land-use monitoring.",
-        "Sustainable aquaculture exports expanded 33% with UN-verified traceability.",
-        "EV battery manufacturing exports reached $9.3B in 2025.",
-        "India is building 40 sustainable shipping hubs powered by renewable energy."
-    ],
-    Brazil: [
-        "Brazil achieved 78% traceability in beef exports — highest ever recorded.",
-        "Forest-positive soy exports reached $18B with zero-deforestation compliance.",
-        "Brazil became the largest exporter of sustainable aviation fuel feedstocks.",
-        "Agro-solar farms improved crop productivity and export revenue by 23%.",
-        "Eco-tourism now represents 12% of Brazil’s service-export sector.",
-        "Native-tree reforestation linked to export permits restored 116M hectares.",
-        "Rainforest-certified coffee exports grew 46% YoY.",
-        "Bio-plastics from sugarcane exports reached 6.1M tons-year.",
-        "Wind-energy equipment exports increased by 34%.",
-        "Amazon green-bond trading funded 1,200+ clean-supply-chain startups."
-    ],
-    Germany: [
-        "Germany leads clean industrial machinery exports worth $108B annually.",
-        "Hydrogen fuel-cell technology exports expanded 57% across Asia.",
-        "Germany’s waste-to-energy trade saved 13M tons of landfill emissions.",
-        "Circular manufacturing partnerships lowered trade-related CO₂ by 29%.",
-        "Eco-certified mechanical engineering exports hit a global high.",
-        "Organic food exports rose by 44% across the EU and Middle East.",
-        "Germany invested $21B in global sustainable-trade infrastructure projects.",
-        "Carbon-label transparency now applies to 96% of export-eligible products.",
-        "Sustainable freight corridors increased efficiency by 31%.",
-        "Green steel production enabled new low-emissions trade agreements."
-    ]
+// Global Insights
+const globalInsights = [
+  "Mandatory due diligence laws are increasingly adopted in developed economies.",
+  "VSS certifications remain critical for small producers accessing global green markets.",
+  "Supply-chain resilience is now a top priority due to pandemics, climate change, and geopolitical risks.",
+  "Sustainable trade is expanding to include labor rights, social justice, and equitable benefit sharing.",
+  "Digital traceability tools improve transparency in textiles, leather, and agriculture.",
+  "Green trade policies are integrated into national and international agreements.",
+  "Diversification into green sectors (renewables, eco-tourism, sustainable handicrafts) is accelerating.",
+  "Biodiversity-based trade reached ~$3.4 trillion globally in 2022.",
+  "Developing countries face challenges in compliance without capacity-building support.",
+  "Global cooperation and harmonized standards are essential for fair sustainable trade."
+];
+
+// Country-specific Insights and Icons
+const countryData = {
+  "Germany": {
+    insights: ["Germany enforces the Supply Chain Due Diligence Act (LkSG)...", "One of the top 3 exporters...", "Focus on human rights...", "Supports VSS...", "Promotes green economy exports...", "Integrates sustainability in agreements...", "Emphasizes supply-chain resilience...", "Collaborates with EU/UN...", "Fair labor practices...", "Capacity-building for SMEs..."],
+    icon: "https://flagcdn.com/de.svg"
+  },
+  "USA": {
+    insights: ["US enforces regulations on forced/child labor...", "Largest global exporter of biodiversity-based products ($332.9B)...", "Strengthens compliance via legal requirements...", "VSS certifications bridge market access...", "Integrates environmental considerations...", "Digital traceability tools improve reporting...", "Supports capacity-building abroad...", "Focus on green trade policies aligned with SDGs...", "Promotes inclusive supply chains...", "Invests in data/monitoring infrastructure..."],
+    icon: "https://flagcdn.com/us.svg"
+  },
+  "China": {
+    insights: ["China is a leading exporter of biodiversity-based products ($318.4B)...", "Major player in global sustainable trade markets...", "Implements VSS for compliance...", "Developing digital traceability and monitoring...", "Encourages diversification into green sectors...", "Focus on meeting international importers' requirements...", "Works with multilateral institutions...", "Supports social inclusion and benefit-sharing...", "Monitors environmental risks...", "Promotes sustainable practices..."],
+    icon: "https://flagcdn.com/cn.svg"
+  },
+  "India": {
+    insights: ["India engages in trade agreements with sustainable development commitments...", "Some exporters rely on VSS for market access...", "Among top global exporters (~3.2% share in 2022)...", "Policies integrate sustainability in trade...", "Promotes green economy exports...", "Digital traceability initiatives emerging...", "Supports small producers to comply...", "Strengthens inclusive trade practices...", "Works with UNCTAD/UNIDO programs...", "Focuses on biodiversity-based trade..."],
+    icon: "https://flagcdn.com/in.svg"
+  },
+  "Netherlands": {
+    insights: ["Uses VSS certifications and integrates sustainability in trade policies...", "Top exporters of biodiversity-based products (~5.3%)...", "Promotes traceability in supply chains...", "Encourages renewable and green exports...", "Focuses on EU-aligned sustainability laws...", "Supports SMEs for compliance...", "Emphasizes fair labor practices...", "Integrates environmental policies in agreements...", "Capacity-building programs active...", "Monitors sustainable trade metrics..."],
+    icon: "https://flagcdn.com/nl.svg"
+  },
+  "France": {
+    insights: ["Corporate Duty of Vigilance Law requires due diligence...", "Significant contributor to EU biodiversity exports...", "Focus on human rights and environment in supply chains...", "Supports VSS and certifications...", "Green export policies implemented...", "Promotes renewable and sustainable sectors...", "Works with EU and UN programs...", "Encourages fair labor practices...", "Capacity-building initiatives ongoing...", "Monitors sustainable trade outcomes..."],
+    icon: "https://flagcdn.com/fr.svg"
+  },
+  "Norway": {
+    insights: ["Transparency Act requires supply-chain due diligence...", "Contributes to EU biodiversity exports...", "Supports VSS certifications...", "Promotes green energy and renewable exports...", "Integrates sustainability in trade policies...", "Capacity-building for SMEs...", "Fair labor practices emphasized...", "Works with UN programs...", "Monitors environmental compliance...", "Digital traceability in supply chains..."],
+    icon: "https://flagcdn.com/no.svg"
+  },
+  "Switzerland": {
+    insights: ["Swiss Code amendments require non-financial reporting...", "Part of European biodiversity exports...", "Supports VSS and traceability...", "Encourages green and sustainable exports...", "Focus on fair labor practices...", "Integrates sustainability in national policies...", "Capacity-building initiatives for exporters...", "Promotes renewable energy exports...", "Monitors compliance in supply chains...", "Collaborates with EU and UN programs..."],
+    icon: "https://flagcdn.com/ch.svg"
+  },
+  "UK": {
+    insights: ["Modern Slavery Act requires supply-chain reporting...", "EU biodiversity exports contributor...", "Supports VSS certifications...", "Promotes fair labor practices...", "Green trade policies integrated...", "Capacity-building for SMEs...", "Monitors sustainable trade metrics...", "Encourages renewable exports...", "Implements traceability tools...", "Works with UN/EU programs..."],
+    icon: "https://flagcdn.com/gb.svg"
+  },
+  "Brazil": {
+    insights: ["Improves supply-chain sustainability for agriculture and timber...", "Among top 7 global biodiversity exporters in 2022...", "Supports VSS certifications...", "Promotes renewable agriculture exports...", "Capacity-building and technical support...", "Digital traceability initiatives emerging...", "Integrates sustainability in trade policies...", "Monitors environmental impact...", "Fair labor practices emphasized...", "Collaborates with multilateral organizations..."],
+    icon: "https://flagcdn.com/br.svg"
+  }
 };
 
-// When button clicked → generate insights for selected country
-document.getElementById("generateInsights").addEventListener("click", () => {
-    const selectedCountry = document.getElementById("countrySelect").value;
-    const insightsContainer = document.getElementById("insightsContainer");
+// Biodiversity-based export values in USD Billion
+const tradeValues = {
+  "Germany": 300, "USA": 332.9, "China": 318.4, "India": 110,
+  "Netherlands": 180, "France": 150, "Norway": 90, "Switzerland": 85,
+  "UK": 140, "Brazil": 75
+};
 
-    if (!selectedCountry || !countryInsights[selectedCountry]) {
-        insightsContainer.innerHTML = "<p>Please select a country to display insights.</p>";
-        return;
+// Populate country dropdown
+const countrySelect = document.getElementById("country-select");
+Object.keys(countryData).forEach(c => {
+  const option = document.createElement("option");
+  option.value = c;
+  option.textContent = c;
+  countrySelect.appendChild(option);
+});
+
+// Generate global insights
+document.getElementById("generate-global").addEventListener("click", () => {
+  const ul = document.getElementById("global-list");
+  ul.innerHTML = "";
+  globalInsights.forEach(ins => {
+    const li = document.createElement("li");
+    li.textContent = ins;
+    ul.appendChild(li);
+  });
+});
+
+// Display country insights and flag on selection
+countrySelect.addEventListener("change", () => {
+  const country = countrySelect.value;
+  const container = document.getElementById("country-container");
+  container.innerHTML = "";
+  if (!country) return;
+
+  const card = document.createElement("div");
+  card.className = "country-card";
+
+  const title = document.createElement("h3");
+  title.textContent = country + " Insights";
+
+  const img = document.createElement("img");
+  img.src = countryData[country].icon;
+  img.alt = country + " flag";
+  img.className = "country-flag";
+
+  const ul = document.createElement("ul");
+  countryData[country].insights.forEach(ins => {
+    const li = document.createElement("li");
+    li.textContent = ins;
+    ul.appendChild(li);
+  });
+
+  card.appendChild(img);
+  card.appendChild(title);
+  card.appendChild(ul);
+  container.appendChild(card);
+});
+
+// Chart
+const ctx = document.getElementById('tradeChart').getContext('2d');
+new Chart(ctx, {
+  type: 'bar',
+  data: {
+    labels: Object.keys(tradeValues),
+    datasets: [{
+      label: 'Biodiversity-Based Exports 2022 (USD Billion)',
+      data: Object.values(tradeValues),
+      backgroundColor: ['#4CAF50','#FF9800','#2196F3','#9C27B0','#FFC107','#8BC34A','#FF5722','#607D8B','#9C27B0','#03A9F4']
+    }]
+  },
+  options: {
+    responsive: true,
+    plugins: {
+      title: { display: true, text: '2022 Biodiversity-Based Exports by Country' },
+      legend: { display: false }
     }
-
-    const insightList = countryInsights[selectedCountry]
-        .map(insight => `<li>${insight}</li>`)
-        .join("");
-
-    insightsContainer.innerHTML = `
-        <h3>${selectedCountry} — Top 10 Sustainable Trade Insights</h3>
-        <ul>${insightList}</ul>
-    `;
+  }
 });
