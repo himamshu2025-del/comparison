@@ -1,3 +1,4 @@
+// Each country now has 10 UNIQUE insights
 const countryInsights = {
     USA: [
         "The U.S. leads renewable energy technology exports, valued at $72B in 2024.",
@@ -121,3 +122,23 @@ const countryInsights = {
     ]
 };
 
+
+// When button clicked → generate insights for selected country
+document.getElementById("generateInsights").addEventListener("click", () => {
+    const selectedCountry = document.getElementById("countrySelect").value;
+    const insightsContainer = document.getElementById("insightsContainer");
+
+    if (!selectedCountry || !countryInsights[selectedCountry]) {
+        insightsContainer.innerHTML = "<p>Please select a country to display insights.</p>";
+        return;
+    }
+
+    const insightList = countryInsights[selectedCountry]
+        .map(insight => `<li>${insight}</li>`)
+        .join("");
+
+    insightsContainer.innerHTML = `
+        <h3>${selectedCountry} — Top 10 Sustainable Trade Insights</h3>
+        <ul>${insightList}</ul>
+    `;
+});
